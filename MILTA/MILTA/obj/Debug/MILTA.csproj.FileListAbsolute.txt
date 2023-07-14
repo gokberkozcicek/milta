@@ -1,0 +1,11 @@
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MILTA.exe.config
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MILTA.exe
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MILTA.pdb
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.AssemblyReference.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.SuggestedBindingRedirects.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.MainForm.resources
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.Properties.Resources.resources
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.GenerateResource.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.CoreCompileInputs.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.exe
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.pdb
