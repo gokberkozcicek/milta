@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Node4");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +64,7 @@
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.drawingAreaUserControl1 = new DrawingAreaControlLibrary.DrawingAreaUserControl();
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
@@ -75,6 +76,7 @@
             this.sidebarSplitContainer.Panel2.SuspendLayout();
             this.sidebarSplitContainer.SuspendLayout();
             this.sidebarToolStrip.SuspendLayout();
+            this.drawingAreaToolStripContainer.ContentPanel.SuspendLayout();
             this.drawingAreaToolStripContainer.LeftToolStripPanel.SuspendLayout();
             this.drawingAreaToolStripContainer.SuspendLayout();
             this.outerSectionToolStrip.SuspendLayout();
@@ -196,22 +198,22 @@
             this.mainTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTreeView.Location = new System.Drawing.Point(0, 25);
             this.mainTreeView.Name = "mainTreeView";
-            treeNode6.Name = "Node0";
-            treeNode6.Text = "Node0";
-            treeNode7.Name = "Node1";
-            treeNode7.Text = "Node1";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Node2";
-            treeNode9.Name = "Node3";
-            treeNode9.Text = "Node3";
-            treeNode10.Name = "Node4";
-            treeNode10.Text = "Node4";
+            treeNode11.Name = "Node0";
+            treeNode11.Text = "Node0";
+            treeNode12.Name = "Node1";
+            treeNode12.Text = "Node1";
+            treeNode13.Name = "Node2";
+            treeNode13.Text = "Node2";
+            treeNode14.Name = "Node3";
+            treeNode14.Text = "Node3";
+            treeNode15.Name = "Node4";
+            treeNode15.Text = "Node4";
             this.mainTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10});
+            treeNode11,
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15});
             this.mainTreeView.Size = new System.Drawing.Size(339, 193);
             this.mainTreeView.TabIndex = 1;
             // 
@@ -242,6 +244,7 @@
             // 
             // drawingAreaToolStripContainer.ContentPanel
             // 
+            this.drawingAreaToolStripContainer.ContentPanel.Controls.Add(this.drawingAreaUserControl1);
             this.drawingAreaToolStripContainer.ContentPanel.Size = new System.Drawing.Size(660, 428);
             this.drawingAreaToolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
@@ -392,6 +395,14 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // drawingAreaUserControl1
+            // 
+            this.drawingAreaUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drawingAreaUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.drawingAreaUserControl1.Name = "drawingAreaUserControl1";
+            this.drawingAreaUserControl1.Size = new System.Drawing.Size(660, 428);
+            this.drawingAreaUserControl1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,6 +431,7 @@
             this.sidebarSplitContainer.ResumeLayout(false);
             this.sidebarToolStrip.ResumeLayout(false);
             this.sidebarToolStrip.PerformLayout();
+            this.drawingAreaToolStripContainer.ContentPanel.ResumeLayout(false);
             this.drawingAreaToolStripContainer.LeftToolStripPanel.ResumeLayout(false);
             this.drawingAreaToolStripContainer.LeftToolStripPanel.PerformLayout();
             this.drawingAreaToolStripContainer.ResumeLayout(false);
@@ -463,6 +475,7 @@
         private System.Windows.Forms.ToolStripButton addCylinderToolStripButton;
         private System.Windows.Forms.ToolStripButton addConeToolStripButton;
         private System.Windows.Forms.ToolStripButton addHexagonToolStripButton;
+        private DrawingAreaControlLibrary.DrawingAreaUserControl drawingAreaUserControl1;
     }
 }
 

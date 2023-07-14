@@ -1,0 +1,8 @@
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\bin\Debug\DrawingAreaControlLibrary.dll
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\bin\Debug\DrawingAreaControlLibrary.pdb
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.csproj.AssemblyReference.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.DrawingAreaUserControl.resources
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.csproj.GenerateResource.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.csproj.CoreCompileInputs.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.dll
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.pdb

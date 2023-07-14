@@ -101,5 +101,11 @@
   <ItemGroup>
     <None Include="Resources\hexagon-32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DrawingAreaControlLibrary\DrawingAreaControlLibrary.csproj">
+      <Project>{575e19d0-1872-4fe5-a59c-8258978be213}</Project>
+      <Name>DrawingAreaControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
