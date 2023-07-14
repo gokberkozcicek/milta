@@ -73,9 +73,39 @@ namespace MILTA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hexagon_32 {
+            get {
+                object obj = ResourceManager.GetObject("hexagon-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rectangle_32 {
+            get {
+                object obj = ResourceManager.GetObject("rectangle-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recycle_bin_32 {
             get {
                 object obj = ResourceManager.GetObject("recycle-bin-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trapezoid_32 {
+            get {
+                object obj = ResourceManager.GetObject("trapezoid-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
