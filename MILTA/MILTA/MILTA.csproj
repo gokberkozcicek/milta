@@ -49,6 +49,7 @@
     <Compile Include="ConeContour.cs" />
     <Compile Include="CustomContourCollection.cs" />
     <Compile Include="CylinderContour.cs" />
+    <Compile Include="MiltaTreeNode.cs" />
     <Compile Include="ShaftItemData.cs" />
     <Compile Include="ShaftContourData.cs" />
     <Compile Include="MainForm.cs">

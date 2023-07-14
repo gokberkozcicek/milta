@@ -12,7 +12,6 @@ namespace GeometryCore
     public class Geometry
     {
         private CustomEntityCollection _entityCollection = new CustomEntityCollection();
-        private ScreenTransformations _drawingOptions = new ScreenTransformations();
         /// <summary>
         /// constructor
         /// </summary>

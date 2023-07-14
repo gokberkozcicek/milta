@@ -28,5 +28,7 @@ namespace MILTA
         public double D1 { get { return _d1; } set { _d1 = value; } }
         public double D2 { get { return _d2; } set { _d2 = value; } }
         public double Length { get { return _length; } set { _length = value; } }
+        public override string Name { get; set; } = "Cone";
+        public override ContourShapesEnum ContourShape { get; set; } = ContourShapesEnum.Cone;
     }
 }

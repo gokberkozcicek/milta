@@ -29,5 +29,7 @@ namespace MILTA
         }
         public double Diameter { get { return _diameter; } set { _diameter = value;} }
         public double Length { get { return _length; } set { _length = value;} }
+        public override string Name { get; set; } = "Cylinder";
+        public override ContourShapesEnum ContourShape { get; set; }= ContourShapesEnum.Cylinder;
     }
 }
