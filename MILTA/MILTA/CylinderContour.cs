@@ -11,8 +11,8 @@ namespace MILTA
     /// </summary>
     internal class CylinderContour:ShaftContourData
     {
-        private double _diameter;
-        private double _length;
+        private double _diameter=20;
+        private double _length=40;
         /// <summary>
         /// constructor
         /// </summary>

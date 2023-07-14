@@ -9,7 +9,9 @@ namespace MILTA
 {
     internal class ConeContour:ShaftContourData
     {
-        private double _d1, _d2,_length;
+        private double _d1 = 30;
+        private double _d2 = 40;
+        private double _length = 30;
         /// <summary>
         /// constructor
         /// </summary>

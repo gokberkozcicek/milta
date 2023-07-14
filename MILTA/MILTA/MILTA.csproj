@@ -118,5 +118,14 @@
       <Name>GeometryCore</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wire-rectangle-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wire-trapezoid-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wire-hexagon-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

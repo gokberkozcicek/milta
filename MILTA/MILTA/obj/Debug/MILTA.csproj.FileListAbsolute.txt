@@ -2,7 +2,9 @@ C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MILTA.exe.co
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MILTA.exe
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MILTA.pdb
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\DrawingAreaControlLibrary.dll
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\GeometryCore.dll
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\DrawingAreaControlLibrary.pdb
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\GeometryCore.pdb
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.AssemblyReference.cache
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.SuggestedBindingRedirects.cache
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.MainForm.resources
@@ -12,5 +14,3 @@ C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.CopyComplete
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.exe
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.pdb
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\GeometryCore.dll
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\GeometryCore.pdb

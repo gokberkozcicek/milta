@@ -17,16 +17,13 @@ namespace MILTA
         {
             InitializeComponent();
         }
-
+        private void UpdateAll()
+        {
+            UpdateTreeView();
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
             shaft = new ShaftData();
-            shaft.InnerContours.Add(new CylinderContour());
-            shaft.InnerContours.Add(new ConeContour());
-            shaft.InnerContours.Add(new CylinderContour());
-            shaft.OuterContours.Add(new CylinderContour());
-            shaft.OuterContours.Add(new ConeContour());
-            shaft.OuterContours.Add(new CylinderContour());
             nodePropertyGrid.SelectedObject = shaft;
             UpdateTreeView();
         }
@@ -68,9 +65,9 @@ namespace MILTA
                 contourNode.Text = outerContour.Name;
                 outerContourNode.Nodes.Add(contourNode);
             }
-
-            shaftNode.Nodes.Add(innerContourNode);
             shaftNode.Nodes.Add(outerContourNode);
+            shaftNode.Nodes.Add(innerContourNode);
+            
 
             mainTreeView.Nodes.Add(shaftNode);
             mainTreeView.ExpandAll();
@@ -98,5 +95,65 @@ namespace MILTA
         }
         #endregion
 
+        
+        #region Contour Toolbar
+        private void AddDummyCylinder(ContourTypesEnum type)
+        {
+            CylinderContour cylinder = new CylinderContour();
+            switch (type)
+            {
+                case ContourTypesEnum.Inner:
+                    cylinder.ContourType = ContourTypesEnum.Inner;
+                    shaft.InnerContours.Add(cylinder);
+                    break;
+                case ContourTypesEnum.Outer:
+                    cylinder.ContourType = ContourTypesEnum.Outer;
+                    shaft.OuterContours.Add(cylinder);
+                    break;
+                default:
+                    break;
+            }
+            
+            UpdateAll();
+        }
+        private void AddDummyCone(ContourTypesEnum type)
+        {
+            ConeContour cone = new ConeContour();
+            switch (type)
+            {
+                case ContourTypesEnum.Inner:
+                    cone.ContourType = ContourTypesEnum.Inner;
+                    shaft.InnerContours.Add(cone);
+                    break;
+                case ContourTypesEnum.Outer:
+                    cone.ContourType = ContourTypesEnum.Outer;
+                    shaft.OuterContours.Add(cone);
+                    break;
+                default:
+                    break;
+            }
+            UpdateAll();
+
+        }
+        private void addOuterCylinderToolStripButton_Click(object sender, EventArgs e)
+        {
+            AddDummyCylinder(ContourTypesEnum.Outer);
+        }
+
+        private void addOuterConeToolStripButton_Click(object sender, EventArgs e)
+        {
+            AddDummyCone(ContourTypesEnum.Outer);
+        }
+
+        private void addInnerCylinderToolStripButton_Click(object sender, EventArgs e)
+        {
+            AddDummyCylinder(ContourTypesEnum.Inner);
+        }
+
+        private void addInnerConeToolStripButton_Click(object sender, EventArgs e)
+        {
+            AddDummyCone(ContourTypesEnum.Inner);
+        }
+        #endregion
     }
 }
