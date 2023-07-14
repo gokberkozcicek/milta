@@ -16,5 +16,10 @@ namespace DrawingAreaControlLibrary
         {
             InitializeComponent();
         }
+
+        private void DrawingAreaUserControl_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

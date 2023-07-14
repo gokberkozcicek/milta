@@ -12,6 +12,7 @@ namespace MILTA
 {
     public partial class MainForm : Form
     {
+        ShaftData shaft;
         public MainForm()
         {
             InitializeComponent();
@@ -19,7 +20,8 @@ namespace MILTA
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            nodePropertyGrid.SelectedObject = this;
+            shaft = new ShaftData();
+            nodePropertyGrid.SelectedObject = shaft;
         }
     }
 }

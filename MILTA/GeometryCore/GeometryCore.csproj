@@ -4,10 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{575E19D0-1872-4FE5-A59C-8258978BE213}</ProjectGuid>
+    <ProjectGuid>{B652DE09-6366-4DC3-968E-B4B32CC3821C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DrawingAreaControlLibrary</RootNamespace>
-    <AssemblyName>DrawingAreaControlLibrary</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeometryCore</RootNamespace>
+    <AssemblyName>GeometryCore</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -36,31 +37,16 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawingAreaUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DrawingAreaUserControl.Designer.cs">
-      <DependentUpon>DrawingAreaUserControl.cs</DependentUpon>
-    </Compile>
+    <Compile Include="CustomEntityCollection.cs" />
+    <Compile Include="EntityData.cs" />
+    <Compile Include="Geometry.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="PointD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="DrawingAreaUserControl.resx">
-      <DependentUpon>DrawingAreaUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GeometryCore\GeometryCore.csproj">
-      <Project>{b652de09-6366-4dc3-968e-b4b32cc3821c}</Project>
-      <Name>GeometryCore</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

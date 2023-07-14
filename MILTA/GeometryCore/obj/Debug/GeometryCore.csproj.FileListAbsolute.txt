@@ -1,0 +1,6 @@
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\GeometryCore\bin\Debug\GeometryCore.dll
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\GeometryCore\bin\Debug\GeometryCore.pdb
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\GeometryCore\obj\Debug\GeometryCore.csproj.AssemblyReference.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\GeometryCore\obj\Debug\GeometryCore.csproj.CoreCompileInputs.cache
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\GeometryCore\obj\Debug\GeometryCore.dll
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\GeometryCore\obj\Debug\GeometryCore.pdb

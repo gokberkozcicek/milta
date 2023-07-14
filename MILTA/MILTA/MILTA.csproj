@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConeContour.cs" />
+    <Compile Include="CustomContourCollection.cs" />
+    <Compile Include="CylinderContour.cs" />
+    <Compile Include="ShaftItemData.cs" />
+    <Compile Include="ShaftContourData.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +59,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShaftData.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +111,10 @@
     <ProjectReference Include="..\DrawingAreaControlLibrary\DrawingAreaControlLibrary.csproj">
       <Project>{575e19d0-1872-4fe5-a59c-8258978be213}</Project>
       <Name>DrawingAreaControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeometryCore\GeometryCore.csproj">
+      <Project>{b652de09-6366-4dc3-968e-b4b32cc3821c}</Project>
+      <Name>GeometryCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
