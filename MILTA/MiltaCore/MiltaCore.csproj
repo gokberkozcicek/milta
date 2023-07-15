@@ -44,9 +44,14 @@
     <Compile Include="BallBearing.cs" />
     <Compile Include="BearingData.cs" />
     <Compile Include="ConeContour.cs" />
+    <Compile Include="CustomLoadCollection.cs" />
+    <Compile Include="TorqueLoad.cs" />
     <Compile Include="CustomBearingCollection.cs" />
     <Compile Include="CustomContourCollection.cs" />
     <Compile Include="CylinderContour.cs" />
+    <Compile Include="ForceLoad.cs" />
+    <Compile Include="LoadData.cs" />
+    <Compile Include="MomentLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShaftContourData.cs" />
     <Compile Include="ShaftData.cs" />

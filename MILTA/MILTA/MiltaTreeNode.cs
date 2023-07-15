@@ -20,7 +20,9 @@ namespace MILTA
         OuterContourHeader,
         Contour,
         BearingsHeader,
-        Bearing
+        Bearing,
+        LoadsHeader,
+        Load
 
     }
 }

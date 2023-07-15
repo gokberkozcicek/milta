@@ -83,9 +83,29 @@ namespace MILTA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap force {
+            get {
+                object obj = ResourceManager.GetObject("force", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hexagon_32 {
             get {
                 object obj = ResourceManager.GetObject("hexagon-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap moment {
+            get {
+                object obj = ResourceManager.GetObject("moment", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace MILTA.Properties {
         internal static System.Drawing.Bitmap recycle_bin_32 {
             get {
                 object obj = ResourceManager.GetObject("recycle-bin-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap torsion {
+            get {
+                object obj = ResourceManager.GetObject("torsion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

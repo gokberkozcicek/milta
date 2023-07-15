@@ -128,5 +128,14 @@
   <ItemGroup>
     <None Include="Resources\bearing-32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\force.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\torsion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

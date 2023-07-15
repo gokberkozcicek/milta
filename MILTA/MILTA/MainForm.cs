@@ -98,6 +98,24 @@ namespace MILTA
             }
             shaftNode.Nodes.Add(bearingHeadNode);
 
+            //loads
+            MiltaTreeNode loadsHeaderNode = new MiltaTreeNode();
+            loadsHeaderNode.ImageIndex = 1;
+            loadsHeaderNode.SelectedImageIndex = 1;
+            loadsHeaderNode.Text = "Loads";
+            loadsHeaderNode.NodeType = MiltaTreeNodeTypesEnum.LoadsHeader;
+
+            foreach (var load in shaft.Loads)
+            {
+                MiltaTreeNode loadNode = new MiltaTreeNode();
+                loadNode.ImageIndex = 0;
+                loadNode.SelectedImageIndex = 0;
+                loadNode.Text = load.Name;
+                loadNode.BaseObjectId = load.Id;
+                loadNode.NodeType = MiltaTreeNodeTypesEnum.Load;
+                loadsHeaderNode.Nodes.Add(loadNode);
+            }
+            shaftNode.Nodes.Add(loadsHeaderNode);
             mainTreeView.Nodes.Add(shaftNode);
             mainTreeView.ExpandAll();
         }
@@ -218,6 +236,10 @@ namespace MILTA
                         nodePropertyGrid.SelectedObject = shaft.GetBearingById(selectedNode.BaseObjectId);
                         shaft.Hightlight(selectedNode.BaseObjectId);
                         break;
+                    case MiltaTreeNodeTypesEnum.Load:
+                        nodePropertyGrid.SelectedObject = shaft.GetLoadById(selectedNode.BaseObjectId);
+                        shaft.Hightlight(selectedNode.BaseObjectId);
+                        break;
                     default:
                         nodePropertyGrid.SelectedObject = null;
                         break;
@@ -237,6 +259,27 @@ namespace MILTA
             shaft.Bearings.Add(bearing);
             UpdateAll();
             drawingAreaUserControl1.ZoomFit();
+        }
+
+        private void forceToolStripButton_Click(object sender, EventArgs e)
+        {
+            ForceLoad dummyForce = new ForceLoad();
+            shaft.Loads.Add(dummyForce);
+            UpdateAll();
+        }
+
+        private void momentToolStripButton_Click(object sender, EventArgs e)
+        {
+            MomentLoad dummyMoment=new MomentLoad();
+            shaft.Loads.Add(dummyMoment);
+            UpdateAll();
+        }
+
+        private void torsionToolStripButton_Click(object sender, EventArgs e)
+        {
+            TorqueLoad dummyTorsion=new TorqueLoad();
+            shaft.Loads.Add(dummyTorsion);
+            UpdateAll();
         }
     }
 }

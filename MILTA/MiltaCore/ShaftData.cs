@@ -22,6 +22,8 @@ namespace MiltaCore
         [Browsable(false)]
         public CustomBearingCollection Bearings { get; set; } = new CustomBearingCollection();
         [Browsable(false)]
+        public CustomLoadCollection Loads { get; set; } = new CustomLoadCollection();
+        [Browsable(false)]
         public List<EntityData> Edges { get { 
             List<EntityData> edges = new List<EntityData>();
                 InnerContours.ForEach(x=>x.Edges.ForEach(y=>edges.Add(y)));
@@ -47,6 +49,7 @@ namespace MiltaCore
             InnerContours.UpdateContours();
             OuterContours.UpdateContours();
             Bearings.UpdateAllBearings();
+            Loads.UpdateAllLoads();
         }
         public void UnHighlightAll()
         {
@@ -71,11 +74,14 @@ namespace MiltaCore
 
             return false;
         }
-        public object GetBearingById(string Id)
+        public BearingData GetBearingById(string Id)
         {
             return Bearings.GetBearingById(Id);
         }
-
+   
+        public LoadData GetLoadById(string Id) {
+        return Loads.GetLoadById(Id);
+        }
         [Browsable(false)]
         public List<PointD> Vertices
         {
