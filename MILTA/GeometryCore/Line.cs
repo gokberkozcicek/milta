@@ -29,6 +29,7 @@ namespace GeometryCore
             _startPoint = startPoint;
             _endPoint = endPoint;
         }
+        public override EntityTypesEnum Type { get; set; } = EntityTypesEnum.Line;
         public PointD StartPoint { get { return _startPoint; } set { _startPoint = value; } }
         public PointD EndPoint { get { return _endPoint; } set { _endPoint = value; } }
         public double Length { get { return StartPoint.DistanceToPoint(EndPoint); } }

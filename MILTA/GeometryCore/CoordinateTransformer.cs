@@ -39,20 +39,18 @@ namespace GeometryCore
         }
         internal void ZoomFit()
         {
-            if (Vertices.Count>=4)
+            if (Vertices.Count>0)
             {
                 BoundingBox worldBB = new BoundingBox(Vertices);
 
-                if (worldBB.Width>=worldBB.Height)
+                double ratio = worldBB.Width / (double)ScreenWidth;
+                if (ratio>1)
                 {
-                    if (worldBB.Width>(double)ScreenWidth)
-                    {
-                        ZoomFactor = (float)((1.75)*(worldBB.Width / (double)ScreenWidth));
-                    }
-                    else
-                    {
-                        ZoomFactor = (float)((1.75) * ((double)ScreenWidth)/worldBB.Width );
-                    }
+                    ZoomFactor = (float)(ratio*1.75);
+                }
+                else
+                {
+                    ZoomFactor = (float)(1/(ratio*1.75));
                 }
                 OffsetX = 0;
                 OffsetY = 0;

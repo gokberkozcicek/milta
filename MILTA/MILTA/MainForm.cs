@@ -20,7 +20,8 @@ namespace MILTA
         }
         private void UpdateGeometry()
         {
-            shaft.Edges.ForEach(x=>drawingAreaUserControl1.Geo.AddEntity(x));
+            drawingAreaUserControl1.ClearGeometry();
+            shaft.OuterContours.ForEach(x => drawingAreaUserControl1.Geo.AddEntity(x.ClosedPath));
             drawingAreaUserControl1.UpdateGeometry();
         }
         private void UpdateAll()
@@ -119,8 +120,9 @@ namespace MILTA
                 default:
                     break;
             }
-            
+           
             UpdateAll();
+            drawingAreaUserControl1.ZoomFit();
         }
         private void AddDummyCone(ContourTypesEnum type)
         {
@@ -138,7 +140,9 @@ namespace MILTA
                 default:
                     break;
             }
+            
             UpdateAll();
+            drawingAreaUserControl1.ZoomFit();
 
         }
         private void addOuterCylinderToolStripButton_Click(object sender, EventArgs e)
@@ -161,5 +165,10 @@ namespace MILTA
             AddDummyCone(ContourTypesEnum.Inner);
         }
         #endregion
+
+        private void outerContourToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

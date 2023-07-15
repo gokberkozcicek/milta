@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node4");
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -286,22 +286,22 @@
             this.mainTreeView.Location = new System.Drawing.Point(0, 25);
             this.mainTreeView.Margin = new System.Windows.Forms.Padding(4);
             this.mainTreeView.Name = "mainTreeView";
-            treeNode6.Name = "Node0";
-            treeNode6.Text = "Node0";
-            treeNode7.Name = "Node1";
-            treeNode7.Text = "Node1";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Node2";
-            treeNode9.Name = "Node3";
-            treeNode9.Text = "Node3";
-            treeNode10.Name = "Node4";
-            treeNode10.Text = "Node4";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Node0";
+            treeNode2.Name = "Node1";
+            treeNode2.Text = "Node1";
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "Node2";
+            treeNode4.Name = "Node3";
+            treeNode4.Text = "Node3";
+            treeNode5.Name = "Node4";
+            treeNode5.Text = "Node4";
             this.mainTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10});
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5});
             this.mainTreeView.SelectedImageIndex = 0;
             this.mainTreeView.Size = new System.Drawing.Size(373, 148);
             this.mainTreeView.TabIndex = 1;
@@ -399,6 +399,7 @@
             this.outerContourToolStrip.Name = "outerContourToolStrip";
             this.outerContourToolStrip.Size = new System.Drawing.Size(24, 80);
             this.outerContourToolStrip.TabIndex = 0;
+            this.outerContourToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.outerContourToolStrip_ItemClicked);
             // 
             // addCylinderToolStripButton
             // 
@@ -406,7 +407,7 @@
             this.addCylinderToolStripButton.Image = global::MILTA.Properties.Resources.rectangle_32;
             this.addCylinderToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addCylinderToolStripButton.Name = "addCylinderToolStripButton";
-            this.addCylinderToolStripButton.Size = new System.Drawing.Size(30, 20);
+            this.addCylinderToolStripButton.Size = new System.Drawing.Size(22, 20);
             this.addCylinderToolStripButton.Text = "toolStripButton1";
             this.addCylinderToolStripButton.Click += new System.EventHandler(this.addOuterCylinderToolStripButton_Click);
             // 
@@ -416,7 +417,7 @@
             this.addConeToolStripButton.Image = global::MILTA.Properties.Resources.trapezoid_32;
             this.addConeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addConeToolStripButton.Name = "addConeToolStripButton";
-            this.addConeToolStripButton.Size = new System.Drawing.Size(30, 20);
+            this.addConeToolStripButton.Size = new System.Drawing.Size(22, 20);
             this.addConeToolStripButton.Text = "toolStripButton2";
             this.addConeToolStripButton.Click += new System.EventHandler(this.addOuterConeToolStripButton_Click);
             // 
@@ -426,7 +427,7 @@
             this.addHexagonToolStripButton.Image = global::MILTA.Properties.Resources.hexagon_32;
             this.addHexagonToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addHexagonToolStripButton.Name = "addHexagonToolStripButton";
-            this.addHexagonToolStripButton.Size = new System.Drawing.Size(30, 20);
+            this.addHexagonToolStripButton.Size = new System.Drawing.Size(22, 20);
             this.addHexagonToolStripButton.Text = "toolStripButton3";
             // 
             // innerContourToolStrip

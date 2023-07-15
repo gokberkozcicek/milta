@@ -37,7 +37,7 @@ namespace MILTA
         public PointD P1, P2, P3, P4;
 
         public Line L1,L2,L3,L4;
-
+        public override ClosedPath ClosedPath { get { return new ClosedPath(Edges); } }
         public override void SetGeometryEntities()
         {
             P1 = StartPoint.Move(0, Diameter / 2);

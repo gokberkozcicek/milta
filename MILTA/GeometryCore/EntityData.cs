@@ -12,6 +12,7 @@ namespace GeometryCore
     public class EntityData
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
+        public virtual EntityTypesEnum Type { get; set; } = EntityTypesEnum.None;
         /// <summary>
         /// Returns vertices of entity.
         /// </summary>
@@ -19,5 +20,12 @@ namespace GeometryCore
             get { return new List<PointD>();} 
         }
 
+    }
+    public enum EntityTypesEnum
+    {
+        None,
+        Line,
+        Arc,
+        ClosedPath
     }
 }

@@ -20,6 +20,7 @@ namespace GeometryCore
         public BoundingBox(List<PointD> points) {
 
             _points = points;
+            SetBoundingBox();
         }
         public void SetBoundingBox()
         {

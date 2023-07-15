@@ -22,7 +22,8 @@ namespace DrawingAreaControlLibrary
 
         private void DrawingAreaUserControl_Load(object sender, EventArgs e)
         {
-            drawingAreaPictureBox.MouseWheel += drawingArea_MouseWheel; //tanımlama
+            drawingAreaPictureBox.MouseWheel += drawingArea_MouseWheel;
+            ZoomFit();
         }
         public void UpdateGeometry()
         {
@@ -30,20 +31,55 @@ namespace DrawingAreaControlLibrary
             Geo.ScreenWidth = drawingAreaPictureBox.Width;
             drawingAreaPictureBox.Invalidate();
         }
-
+        public void ZoomFit()
+        {
+            Geo.ZoomFit();
+        }
         private void DrawLine(Graphics g,Line line,Color color,float lineWeight,bool isDashed)
         {
             Pen pen = new Pen(color, lineWeight);
             pen.DashStyle = isDashed ? DashStyle.Dot : DashStyle.Solid;
             g.DrawLine(pen,Geo.ToScreen(line.StartPoint),Geo.ToScreen(line.EndPoint));
         }
+        private void DrawClosedPath(Graphics g,ClosedPath closedPath) {
+            
+            GraphicsPath path = new GraphicsPath();
+           foreach (var item in closedPath.Edges) {
+                if (item.Type.Equals(EntityTypesEnum.Line))
+                {
+                    path.AddLine(Geo.ToScreen((item as Line).StartPoint), Geo.ToScreen((item as Line).StartPoint));
+                }
+            }
+           
+            path.CloseFigure();
+
+            Color centerColor = Color.FromArgb(255, 240, 240, 240);
+            Color edgeColor = Color.FromArgb(195,195,195);
+            LinearGradientBrush brush = new LinearGradientBrush(Geo.ToScreen(closedPath.BoundingBox.P1), Geo.ToScreen(closedPath.BoundingBox.P4), edgeColor, edgeColor);
+            ColorBlend color_blend = new ColorBlend();
+
+            color_blend.Colors = new Color[] { edgeColor,centerColor,edgeColor };
+            color_blend.Positions = new float[] { 0f, 0.5f, 1f };
+            brush.InterpolationColors = color_blend;
+       
+            g.FillPath(brush, path);
+            g.DrawPath(Pens.Black, path);
+        }
+        public void ClearGeometry()
+        {
+            Geo.Entities.Clear();
+        }
         private void drawingAreaPictureBox_Paint(object sender, PaintEventArgs e)
         {
             
             foreach (var item in Geo.Entities)
             {
-                DrawLine(e.Graphics, item as Line, Color.Black, 1, true);
+                if (item.Type.Equals(EntityTypesEnum.ClosedPath))
+                {
+                    DrawClosedPath(e.Graphics, item as ClosedPath);
+                }
             }
+          
         }
         private void Pan(MouseEventArgs e) {
             if (e.Button.Equals(MouseButtons.Middle))

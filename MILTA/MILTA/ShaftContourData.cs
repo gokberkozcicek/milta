@@ -15,11 +15,13 @@ namespace MILTA
         public ShaftContourData() { }
         public virtual ContourTypesEnum ContourType { get; set; } = ContourTypesEnum.None;
         public virtual ContourShapesEnum ContourShape { get; set; } = ContourShapesEnum.None;
-        public PointD StartPoint { get; set; }=new PointD();
-        public double StartOffset { get; set; } = 0;
+       
         public virtual double Length { get; set; } = 30;
+        public PointD StartPoint { get; set; } = new PointD();
+        public double StartOffset { get; set; } = 0;
         public virtual List<PointD> Vertices { get; set; }
         public virtual List<EntityData> Edges { get; set; }
+        public virtual ClosedPath ClosedPath { get; }
         public virtual void SetGeometryEntities() { }
     }
     /// <summary>

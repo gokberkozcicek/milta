@@ -34,7 +34,7 @@
             // 
             // drawingAreaPictureBox
             // 
-            this.drawingAreaPictureBox.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.drawingAreaPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.drawingAreaPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.drawingAreaPictureBox.Location = new System.Drawing.Point(0, 0);
             this.drawingAreaPictureBox.Margin = new System.Windows.Forms.Padding(4);

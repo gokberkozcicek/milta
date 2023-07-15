@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometryCore
 {
-    public class ClosedPath
+    public class ClosedPath:EntityData
     {
         private List<EntityData> _entities;
         public ClosedPath() { }
@@ -14,5 +14,17 @@ namespace GeometryCore
         {
             _entities = entities;
         }
+        public List<EntityData> Edges { get { return _entities; } }
+        public override List<PointD> Vertices
+        {
+            get
+            {
+                List<PointD> vertices = new List<PointD>();
+                _entities.ForEach(x => x.Vertices.ForEach(y => vertices.Add(y)));
+                return vertices;
+            }
+        }
+        public override EntityTypesEnum Type { get; set; } = EntityTypesEnum.ClosedPath;
+        public BoundingBox BoundingBox { get { return new BoundingBox(Vertices); } }
     }
 }
