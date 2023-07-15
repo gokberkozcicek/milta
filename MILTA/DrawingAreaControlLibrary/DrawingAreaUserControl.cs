@@ -122,7 +122,7 @@ namespace DrawingAreaControlLibrary
             Color penColor = Color.Green;
             Pen pen = new Pen(penColor, 5);
             pen.EndCap = LineCap.ArrowAnchor;
-            pen.StartCap = LineCap.Round;
+            pen.StartCap = LineCap.RoundAnchor;
             pen.DashStyle = DashStyle.Solid;
             
             g.DrawLine(pen,centerPoint,xpoint);
@@ -133,6 +133,10 @@ namespace DrawingAreaControlLibrary
             xpoint.Y -= 6F;
             DrawText(g, yPoint, "Y");
             DrawText(g, xpoint, "X");
+
+            centerPoint.X -= 5F;
+            centerPoint.Y += 5F;
+            DrawText(g,centerPoint, "Z");
 
           
         }
