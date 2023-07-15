@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BallBearing.cs" />
+    <Compile Include="BearingData.cs" />
     <Compile Include="ConeContour.cs" />
+    <Compile Include="CustomBearingCollection.cs" />
     <Compile Include="CustomContourCollection.cs" />
     <Compile Include="CylinderContour.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

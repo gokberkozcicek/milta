@@ -18,7 +18,9 @@ namespace MILTA
         Shaft,
         InnerContourHeader,
         OuterContourHeader,
-        Contour
+        Contour,
+        BearingsHeader,
+        Bearing
 
     }
 }

@@ -38,13 +38,14 @@ namespace DrawingAreaControlLibrary
             Geo.ZoomPoints = Shaft.Vertices;
             Geo.ZoomFit();
         }
-        private void DrawLine(Graphics g,Line line,Color color,float lineWeight,bool isDashed)
+        private void DrawLine(Graphics g,Line line,Color color,float lineWeight,bool isDashed,bool isHighlighted=false)
         {
-            Pen pen = new Pen(color, lineWeight);
+            Color penColor=isDashed ? Color.Blue : Color.Black;
+            Pen pen = new Pen(penColor, lineWeight);
             pen.DashStyle = isDashed ? DashStyle.Dash : DashStyle.Solid;
             g.DrawLine(pen,Geo.ToScreen(line.StartPoint),Geo.ToScreen(line.EndPoint));
         }
-        private void DrawClosedPath(Graphics g,ClosedPath closedPath) {
+        private void DrawClosedPath(Graphics g,ClosedPath closedPath, bool isHighlighted = false) {
             
             GraphicsPath path = new GraphicsPath();
            foreach (var item in closedPath.Edges) {
@@ -52,6 +53,7 @@ namespace DrawingAreaControlLibrary
                 {
                     path.AddLine(Geo.ToScreen((item as Line).StartPoint), Geo.ToScreen((item as Line).StartPoint));
                 }
+               
             }
            
             path.CloseFigure();
@@ -66,7 +68,9 @@ namespace DrawingAreaControlLibrary
             brush.InterpolationColors = color_blend;
        
             g.FillPath(brush, path);
-            g.DrawPath(Pens.Black, path);
+            Color penColor = isHighlighted ? Color.Blue : Color.Black;
+            float weight=isHighlighted ? 2f : 1f;
+            g.DrawPath(new Pen(penColor, weight), path);
         }
         public void ClearGeometry()
         {
@@ -77,16 +81,60 @@ namespace DrawingAreaControlLibrary
 
             foreach (ShaftContourData outerContour in Shaft.OuterContours)
             {
-                DrawClosedPath(e.Graphics, outerContour.ClosedPath);
+                DrawClosedPath(e.Graphics, outerContour.ClosedPath,outerContour.IsHighlighted);
             }
             foreach (ShaftContourData innerContour in Shaft.InnerContours)
             {
                 foreach (var edge in innerContour.Edges)
                 {
-                    DrawLine(e.Graphics, edge as Line, Color.Black, 1, true);
+                    DrawLine(e.Graphics, edge as Line, Color.Black, 1, true,innerContour.IsHighlighted);
                 }
             }
+            foreach (var bearing in Shaft.Bearings)
+            {
+                DrawBearings(e.Graphics,bearing);
+            }
 
+        }
+        private void DrawBearings(Graphics g,BearingData bearing)
+        {
+            foreach (var closedPath in bearing.ClosedPaths)
+            {
+                GraphicsPath path = new GraphicsPath();
+                foreach (var item in closedPath.Edges)
+                {
+                    if (item.Type.Equals(EntityTypesEnum.Line))
+                    {
+                        path.AddLine(Geo.ToScreen((item as Line).StartPoint), Geo.ToScreen((item as Line).StartPoint));
+                    }
+                    if (item.Type.Equals(EntityTypesEnum.Circle))
+                    {
+                   
+                        Circle c1 = item as Circle;
+                        RectangleF rectangleF = new RectangleF();
+                        rectangleF.X = Geo.ToScreen(c1.RectangleStartPoint).X;
+                        rectangleF.Y = Geo.ToScreen(c1.RectangleStartPoint).Y;
+                        rectangleF.Width = (float)c1.Width * Geo.ZoomFactor;
+                        rectangleF.Height = (float)c1.Height * Geo.ZoomFactor;
+                        path.AddEllipse(rectangleF);
+                    }
+
+                }
+
+                path.CloseFigure();
+
+                Color centerColor = Color.FromArgb(255, 240, 240, 240);
+                Color edgeColor = Color.FromArgb(236, 190, 60);
+                LinearGradientBrush brush = new LinearGradientBrush(Geo.ToScreen(closedPath.BoundingBox.P1), Geo.ToScreen(closedPath.BoundingBox.P4), edgeColor, edgeColor);
+                ColorBlend color_blend = new ColorBlend();
+
+                color_blend.Colors = new Color[] { edgeColor, centerColor, edgeColor };
+                color_blend.Positions = new float[] { 0f, 0.5f, 1f };
+                brush.InterpolationColors = color_blend;
+
+                g.FillPath(brush, path);
+                g.DrawPath(Pens.Black, path);
+            }
         }
         private void Pan(MouseEventArgs e) {
             if (e.Button.Equals(MouseButtons.Middle))

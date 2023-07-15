@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoundingBox.cs" />
+    <Compile Include="Circle.cs" />
     <Compile Include="ClosedPath.cs" />
     <Compile Include="CoordinateTransformer.cs" />
     <Compile Include="CustomEntityCollection.cs" />

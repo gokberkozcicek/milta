@@ -26,6 +26,7 @@ namespace GeometryCore
         None,
         Line,
         Arc,
+        Circle,
         ClosedPath
     }
 }

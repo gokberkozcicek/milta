@@ -20,6 +20,8 @@ namespace MiltaCore
         [Browsable(false)]
         public CustomContourCollection OuterContours { get; set; } = new CustomContourCollection();
         [Browsable(false)]
+        public CustomBearingCollection Bearings { get; set; } = new CustomBearingCollection();
+        [Browsable(false)]
         public List<EntityData> Edges { get { 
             List<EntityData> edges = new List<EntityData>();
                 InnerContours.ForEach(x=>x.Edges.ForEach(y=>edges.Add(y)));
@@ -44,7 +46,36 @@ namespace MiltaCore
         {
             InnerContours.UpdateContours();
             OuterContours.UpdateContours();
+            Bearings.UpdateAllBearings();
         }
+        public void UnHighlightAll()
+        {
+            InnerContours.ForEach(x=>x.IsHighlighted = false);
+            OuterContours.ForEach(x=>x.IsHighlighted = false);
+            Bearings.ForEach(x=>x.IsHighlighted = false);
+        }
+        public void HightlightAllShaft()
+        {
+            OuterContours.ForEach(x => x.IsHighlighted = true);
+        }
+        public bool Hightlight(string Id)
+        {
+            if (InnerContours.Highlight(Id))
+            {
+                return true;
+            }
+            if (OuterContours.Highlight(Id))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public object GetBearingById(string Id)
+        {
+            return Bearings.GetBearingById(Id);
+        }
+
         [Browsable(false)]
         public List<PointD> Vertices
         {

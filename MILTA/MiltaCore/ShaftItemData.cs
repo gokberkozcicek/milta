@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeometryCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,5 +16,9 @@ namespace MiltaCore
         [Browsable(false)]
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public virtual string Name { get; set; }
+        [Browsable(false)]
+        public PointD StartPoint { get; set; } = new PointD();
+        public virtual double LocationX { get; set; } = 0;
+        public bool IsHighlighted { get; set; } = false;
     }
 }

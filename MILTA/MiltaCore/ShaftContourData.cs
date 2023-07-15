@@ -20,8 +20,7 @@ namespace MiltaCore
         public virtual ContourShapesEnum ContourShape { get; set; } = ContourShapesEnum.None;
        
         public virtual double Length { get; set; } = 30;
-        [Browsable(false)]
-        public PointD StartPoint { get; set; } = new PointD();
+       
         [Browsable(false)]
         public double StartOffset { get; set; } = 0;
         [Browsable(false)]

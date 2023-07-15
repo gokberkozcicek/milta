@@ -60,5 +60,18 @@ namespace MiltaCore
                 }
                 return length;
             }set { } }
+        public bool Highlight(string Id)
+        {
+            foreach (var item in this)
+            {
+                if (item.Id.Equals(Id))
+                {
+                    item.IsHighlighted = true;
+                    return true;
+                }
+            }
+            return false;
+     
+        }
     }
 }

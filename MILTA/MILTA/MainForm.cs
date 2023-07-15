@@ -79,7 +79,24 @@ namespace MILTA
             }
             shaftNode.Nodes.Add(outerContourNode);
             shaftNode.Nodes.Add(innerContourNode);
-            
+
+            //Bearings 
+            MiltaTreeNode bearingHeadNode = new MiltaTreeNode();
+            bearingHeadNode.ImageIndex = 1;
+            bearingHeadNode.SelectedImageIndex = 1;
+            bearingHeadNode.Text = "Bearings";
+            bearingHeadNode.NodeType = MiltaTreeNodeTypesEnum.BearingsHeader;
+            foreach (var bearing in shaft.Bearings)
+            {
+                MiltaTreeNode bearingNode = new MiltaTreeNode();
+                bearingNode.ImageIndex = 0;
+                bearingNode.SelectedImageIndex = 0;
+                bearingNode.Text = bearing.Name;
+                bearingNode.BaseObjectId = bearing.Id;
+                bearingNode.NodeType = MiltaTreeNodeTypesEnum.Bearing;
+                bearingHeadNode.Nodes.Add(bearingNode);
+            }
+            shaftNode.Nodes.Add(bearingHeadNode);
 
             mainTreeView.Nodes.Add(shaftNode);
             mainTreeView.ExpandAll();
@@ -184,27 +201,42 @@ namespace MILTA
         {
             if (mainTreeView.SelectedNode != null)
             {
+                shaft.UnHighlightAll();
                 MiltaTreeNode selectedNode = mainTreeView.SelectedNode as MiltaTreeNode;
                 switch (selectedNode.NodeType)
                 {
                     case MiltaTreeNodeTypesEnum.Shaft:
                         nodePropertyGrid.SelectedObject = shaft;
+                        shaft.HightlightAllShaft();
                         break;
                         break;
                     case MiltaTreeNodeTypesEnum.Contour:
                         nodePropertyGrid.SelectedObject=shaft.GetContourById(selectedNode.BaseObjectId);
-
+                        shaft.Hightlight(selectedNode.BaseObjectId);
+                        break;
+                    case MiltaTreeNodeTypesEnum.Bearing:
+                        nodePropertyGrid.SelectedObject = shaft.GetBearingById(selectedNode.BaseObjectId);
+                        shaft.Hightlight(selectedNode.BaseObjectId);
                         break;
                     default:
                         nodePropertyGrid.SelectedObject = null;
                         break;
                 }
             }
+            drawingAreaUserControl1.UpdateGeometry();
         }
 
         private void nodePropertyGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
             UpdateAll();
+        }
+
+        private void addBearingToolStripButton_Click(object sender, EventArgs e)
+        {
+            BallBearing bearing=new BallBearing();
+            shaft.Bearings.Add(bearing);
+            UpdateAll();
+            drawingAreaUserControl1.ZoomFit();
         }
     }
 }
