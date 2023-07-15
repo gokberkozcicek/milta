@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using GeometryCore;
 using System.Drawing.Drawing2D;
 using MiltaCore;
+using System.Drawing.Text;
+
 namespace DrawingAreaControlLibrary
 {
     public partial class DrawingAreaUserControl: UserControl
@@ -94,7 +96,45 @@ namespace DrawingAreaControlLibrary
             {
                 DrawBearings(e.Graphics,bearing);
             }
+            DrawAxis(e.Graphics);
+        }
+        private void DrawText(Graphics g, PointF point, string text, float size = 12F)
+        {
+            var fontFamily = new FontFamily("Consolas");
+            var font = new Font(fontFamily, size, FontStyle.Regular, GraphicsUnit.Pixel);
+            var solidBrush = new SolidBrush(Color.Green);
+            
 
+            g.TextRenderingHint = TextRenderingHint.AntiAlias;
+            
+            g.DrawString(text, font, solidBrush, point);
+        }
+        private void DrawAxis(Graphics g) { 
+            PointF centerPoint=Geo.ToScreen(new PointD(0,0));
+
+            PointF yPoint = new PointF();
+             yPoint.X = centerPoint.X;
+            yPoint.Y = centerPoint.Y - 50 ;
+
+            PointF xpoint= new PointF();
+            xpoint.X = centerPoint.X+50;
+            xpoint.Y = centerPoint.Y;
+            Color penColor = Color.Green;
+            Pen pen = new Pen(penColor, 5);
+            pen.EndCap = LineCap.ArrowAnchor;
+            pen.StartCap = LineCap.Round;
+            pen.DashStyle = DashStyle.Solid;
+            
+            g.DrawLine(pen,centerPoint,xpoint);
+            g.DrawLine(pen,centerPoint,yPoint);
+
+            yPoint.Y -= 12F;
+            yPoint.X -= 6F;
+            xpoint.Y -= 6F;
+            DrawText(g, yPoint, "Y");
+            DrawText(g, xpoint, "X");
+
+          
         }
         private void DrawBearings(Graphics g,BearingData bearing)
         {
