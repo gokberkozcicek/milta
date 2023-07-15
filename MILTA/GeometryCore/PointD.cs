@@ -44,16 +44,16 @@ namespace GeometryCore
         /// <param name="y">New Y</param>
         /// <param name="changeBasePoint">If this argument is true changes base point otherwise return a deep copy of point object</param>
         /// <returns></returns>
-        public PointD Move(double x, double y,bool changeBasePoint=false) {
+        public PointD Move(double dx, double dy,bool changeBasePoint=false) {
             if (changeBasePoint)
             {
-                _x = x;
-                _y = y;
+                _x =_x+ dx;
+                _y = _y+dy;
                 return this;
             }
             else
             {
-                return new PointD(x, y);
+                return new PointD(_x + dx, _y + dy);
             }
         }
         /// <summary>

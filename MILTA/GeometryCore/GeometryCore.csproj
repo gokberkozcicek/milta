@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundingBox.cs" />
+    <Compile Include="ClosedPath.cs" />
+    <Compile Include="CoordinateTransformer.cs" />
     <Compile Include="CustomEntityCollection.cs" />
     <Compile Include="EntityData.cs" />
+    <Compile Include="GeoAnalyticalCalculations.cs" />
     <Compile Include="Geometry.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="PointD.cs" />

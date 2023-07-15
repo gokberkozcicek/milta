@@ -16,6 +16,17 @@ namespace GeometryCore
             base.Add(item);
         }
         public new void Clear() { base.Clear();}
-
+        public List<PointD> Vertices
+        {
+            get {
+                List<PointD> points = new List<PointD>();
+                foreach (var item in this)
+                {
+                    item.Vertices.ForEach(x => points.Add(x.DeepCopy()));
+                }
+                return points;
+            }
+            
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeometryCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -29,8 +30,26 @@ namespace MILTA
         }
         public double D1 { get { return _d1; } set { _d1 = value; } }
         public double D2 { get { return _d2; } set { _d2 = value; } }
-        public double Length { get { return _length; } set { _length = value; } }
+        public override double Length { get { return _length; } set { _length = value; } }
         public override string Name { get; set; } = "Cone";
         public override ContourShapesEnum ContourShape { get; set; } = ContourShapesEnum.Cone;
+
+        public PointD P1, P2, P3, P4;
+
+        public Line L1, L2, L3, L4;
+
+        public override void SetGeometryEntities()
+        {
+            P1 = StartPoint.Move(0, D1 / 2);
+            P2 = StartPoint.Move(Length, D2 / 2);
+            P3 = StartPoint.Move(Length, -D2 / 2);
+            P4 = StartPoint.Move(0, -D1 / 2);
+            L1 = new Line(P1, P2);
+            L2 = new Line(P2, P3);
+            L3 = new Line(P3, P4);
+            L4 = new Line(P4, P1);
+        }
+        public override List<PointD> Vertices { get { SetGeometryEntities(); return new List<PointD>() { P1, P2, P3, P4 }; } }
+        public override List<EntityData> Edges { get { SetGeometryEntities(); return new List<EntityData>() { L1, L2, L3, L4 }; } }
     }
 }

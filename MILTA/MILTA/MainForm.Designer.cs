@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node4");
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +62,6 @@
             this.deleteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.nodePropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.drawingAreaToolStripContainer = new System.Windows.Forms.ToolStripContainer();
-            this.drawingAreaUserControl1 = new DrawingAreaControlLibrary.DrawingAreaUserControl();
             this.outerContourToolStrip = new System.Windows.Forms.ToolStrip();
             this.addCylinderToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addConeToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -71,6 +70,7 @@
             this.addInnerCylinderToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addInnerConeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addInnerHexagonToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.drawingAreaUserControl1 = new DrawingAreaControlLibrary.DrawingAreaUserControl();
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
@@ -286,22 +286,22 @@
             this.mainTreeView.Location = new System.Drawing.Point(0, 25);
             this.mainTreeView.Margin = new System.Windows.Forms.Padding(4);
             this.mainTreeView.Name = "mainTreeView";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "Node0";
-            treeNode2.Name = "Node1";
-            treeNode2.Text = "Node1";
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Node2";
-            treeNode4.Name = "Node3";
-            treeNode4.Text = "Node3";
-            treeNode5.Name = "Node4";
-            treeNode5.Text = "Node4";
+            treeNode6.Name = "Node0";
+            treeNode6.Text = "Node0";
+            treeNode7.Name = "Node1";
+            treeNode7.Text = "Node1";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "Node2";
+            treeNode9.Name = "Node3";
+            treeNode9.Text = "Node3";
+            treeNode10.Name = "Node4";
+            treeNode10.Text = "Node4";
             this.mainTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10});
             this.mainTreeView.SelectedImageIndex = 0;
             this.mainTreeView.Size = new System.Drawing.Size(373, 148);
             this.mainTreeView.TabIndex = 1;
@@ -374,7 +374,7 @@
             // 
             this.drawingAreaToolStripContainer.ContentPanel.Controls.Add(this.drawingAreaUserControl1);
             this.drawingAreaToolStripContainer.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.drawingAreaToolStripContainer.ContentPanel.Size = new System.Drawing.Size(720, 337);
+            this.drawingAreaToolStripContainer.ContentPanel.Size = new System.Drawing.Size(728, 337);
             this.drawingAreaToolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
             // drawingAreaToolStripContainer.LeftToolStripPanel
@@ -387,15 +387,6 @@
             this.drawingAreaToolStripContainer.Size = new System.Drawing.Size(752, 362);
             this.drawingAreaToolStripContainer.TabIndex = 0;
             this.drawingAreaToolStripContainer.Text = "toolStripContainer1";
-            // 
-            // drawingAreaUserControl1
-            // 
-            this.drawingAreaUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drawingAreaUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.drawingAreaUserControl1.Margin = new System.Windows.Forms.Padding(5);
-            this.drawingAreaUserControl1.Name = "drawingAreaUserControl1";
-            this.drawingAreaUserControl1.Size = new System.Drawing.Size(720, 337);
-            this.drawingAreaUserControl1.TabIndex = 0;
             // 
             // outerContourToolStrip
             // 
@@ -415,7 +406,7 @@
             this.addCylinderToolStripButton.Image = global::MILTA.Properties.Resources.rectangle_32;
             this.addCylinderToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addCylinderToolStripButton.Name = "addCylinderToolStripButton";
-            this.addCylinderToolStripButton.Size = new System.Drawing.Size(22, 20);
+            this.addCylinderToolStripButton.Size = new System.Drawing.Size(30, 20);
             this.addCylinderToolStripButton.Text = "toolStripButton1";
             this.addCylinderToolStripButton.Click += new System.EventHandler(this.addOuterCylinderToolStripButton_Click);
             // 
@@ -425,7 +416,7 @@
             this.addConeToolStripButton.Image = global::MILTA.Properties.Resources.trapezoid_32;
             this.addConeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addConeToolStripButton.Name = "addConeToolStripButton";
-            this.addConeToolStripButton.Size = new System.Drawing.Size(22, 20);
+            this.addConeToolStripButton.Size = new System.Drawing.Size(30, 20);
             this.addConeToolStripButton.Text = "toolStripButton2";
             this.addConeToolStripButton.Click += new System.EventHandler(this.addOuterConeToolStripButton_Click);
             // 
@@ -435,7 +426,7 @@
             this.addHexagonToolStripButton.Image = global::MILTA.Properties.Resources.hexagon_32;
             this.addHexagonToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addHexagonToolStripButton.Name = "addHexagonToolStripButton";
-            this.addHexagonToolStripButton.Size = new System.Drawing.Size(22, 20);
+            this.addHexagonToolStripButton.Size = new System.Drawing.Size(30, 20);
             this.addHexagonToolStripButton.Text = "toolStripButton3";
             // 
             // innerContourToolStrip
@@ -447,7 +438,7 @@
             this.addInnerHexagonToolStripButton});
             this.innerContourToolStrip.Location = new System.Drawing.Point(0, 83);
             this.innerContourToolStrip.Name = "innerContourToolStrip";
-            this.innerContourToolStrip.Size = new System.Drawing.Size(32, 99);
+            this.innerContourToolStrip.Size = new System.Drawing.Size(24, 80);
             this.innerContourToolStrip.TabIndex = 1;
             // 
             // addInnerCylinderToolStripButton
@@ -456,7 +447,7 @@
             this.addInnerCylinderToolStripButton.Image = global::MILTA.Properties.Resources.wire_rectangle_32;
             this.addInnerCylinderToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addInnerCylinderToolStripButton.Name = "addInnerCylinderToolStripButton";
-            this.addInnerCylinderToolStripButton.Size = new System.Drawing.Size(30, 20);
+            this.addInnerCylinderToolStripButton.Size = new System.Drawing.Size(22, 20);
             this.addInnerCylinderToolStripButton.Text = "toolStripButton1";
             this.addInnerCylinderToolStripButton.Click += new System.EventHandler(this.addInnerCylinderToolStripButton_Click);
             // 
@@ -466,7 +457,7 @@
             this.addInnerConeToolStripButton.Image = global::MILTA.Properties.Resources.wire_trapezoid_32;
             this.addInnerConeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addInnerConeToolStripButton.Name = "addInnerConeToolStripButton";
-            this.addInnerConeToolStripButton.Size = new System.Drawing.Size(30, 20);
+            this.addInnerConeToolStripButton.Size = new System.Drawing.Size(22, 20);
             this.addInnerConeToolStripButton.Text = "toolStripButton2";
             this.addInnerConeToolStripButton.Click += new System.EventHandler(this.addInnerConeToolStripButton_Click);
             // 
@@ -476,8 +467,17 @@
             this.addInnerHexagonToolStripButton.Image = global::MILTA.Properties.Resources.wire_hexagon_32;
             this.addInnerHexagonToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addInnerHexagonToolStripButton.Name = "addInnerHexagonToolStripButton";
-            this.addInnerHexagonToolStripButton.Size = new System.Drawing.Size(30, 20);
+            this.addInnerHexagonToolStripButton.Size = new System.Drawing.Size(22, 20);
             this.addInnerHexagonToolStripButton.Text = "toolStripButton3";
+            // 
+            // drawingAreaUserControl1
+            // 
+            this.drawingAreaUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drawingAreaUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.drawingAreaUserControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.drawingAreaUserControl1.Name = "drawingAreaUserControl1";
+            this.drawingAreaUserControl1.Size = new System.Drawing.Size(728, 337);
+            this.drawingAreaUserControl1.TabIndex = 0;
             // 
             // MainForm
             // 

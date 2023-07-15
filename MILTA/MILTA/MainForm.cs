@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawingAreaControlLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,15 @@ namespace MILTA
         {
             InitializeComponent();
         }
+        private void UpdateGeometry()
+        {
+            shaft.Edges.ForEach(x=>drawingAreaUserControl1.Geo.AddEntity(x));
+            drawingAreaUserControl1.UpdateGeometry();
+        }
         private void UpdateAll()
         {
             UpdateTreeView();
+            UpdateGeometry();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -95,7 +102,6 @@ namespace MILTA
         }
         #endregion
 
-        
         #region Contour Toolbar
         private void AddDummyCylinder(ContourTypesEnum type)
         {
