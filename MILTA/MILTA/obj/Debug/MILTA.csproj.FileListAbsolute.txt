@@ -14,3 +14,5 @@ C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.csproj.CopyComplete
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.exe
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\obj\Debug\MILTA.pdb
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MiltaCore.dll
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MILTA\bin\Debug\MiltaCore.pdb

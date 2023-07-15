@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GeometryCore;
 using System.Drawing.Drawing2D;
-
+using MiltaCore;
 namespace DrawingAreaControlLibrary
 {
     public partial class DrawingAreaUserControl: UserControl
     {
         public Geometry Geo = new Geometry();
+        public ShaftData Shaft=new ShaftData();
         public DrawingAreaUserControl()
         {
             InitializeComponent();
@@ -29,16 +30,18 @@ namespace DrawingAreaControlLibrary
         {
             Geo.ScreenHeight = drawingAreaPictureBox.Height;
             Geo.ScreenWidth = drawingAreaPictureBox.Width;
+
             drawingAreaPictureBox.Invalidate();
         }
         public void ZoomFit()
         {
+            Geo.ZoomPoints = Shaft.Vertices;
             Geo.ZoomFit();
         }
         private void DrawLine(Graphics g,Line line,Color color,float lineWeight,bool isDashed)
         {
             Pen pen = new Pen(color, lineWeight);
-            pen.DashStyle = isDashed ? DashStyle.Dot : DashStyle.Solid;
+            pen.DashStyle = isDashed ? DashStyle.Dash : DashStyle.Solid;
             g.DrawLine(pen,Geo.ToScreen(line.StartPoint),Geo.ToScreen(line.EndPoint));
         }
         private void DrawClosedPath(Graphics g,ClosedPath closedPath) {
@@ -71,15 +74,19 @@ namespace DrawingAreaControlLibrary
         }
         private void drawingAreaPictureBox_Paint(object sender, PaintEventArgs e)
         {
-            
-            foreach (var item in Geo.Entities)
+
+            foreach (ShaftContourData outerContour in Shaft.OuterContours)
             {
-                if (item.Type.Equals(EntityTypesEnum.ClosedPath))
+                DrawClosedPath(e.Graphics, outerContour.ClosedPath);
+            }
+            foreach (ShaftContourData innerContour in Shaft.InnerContours)
+            {
+                foreach (var edge in innerContour.Edges)
                 {
-                    DrawClosedPath(e.Graphics, item as ClosedPath);
+                    DrawLine(e.Graphics, edge as Line, Color.Black, 1, true);
                 }
             }
-          
+
         }
         private void Pan(MouseEventArgs e) {
             if (e.Button.Equals(MouseButtons.Middle))
@@ -117,6 +124,18 @@ namespace DrawingAreaControlLibrary
         private void drawingAreaPictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             Pan(e);
+        }
+
+        private void drawingAreaPictureBox_ClientSizeChanged(object sender, EventArgs e)
+        {
+            ZoomFit();
+            UpdateGeometry();
+        }
+
+        private void drawingAreaPictureBox_SizeChanged(object sender, EventArgs e)
+        {
+            ZoomFit();
+            UpdateGeometry();
         }
     }
 }

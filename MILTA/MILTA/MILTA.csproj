@@ -46,21 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConeContour.cs" />
-    <Compile Include="CustomContourCollection.cs" />
-    <Compile Include="CylinderContour.cs" />
-    <Compile Include="MiltaTreeNode.cs" />
-    <Compile Include="ShaftItemData.cs" />
-    <Compile Include="ShaftContourData.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MiltaTreeNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShaftData.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +110,10 @@
     <ProjectReference Include="..\GeometryCore\GeometryCore.csproj">
       <Project>{b652de09-6366-4dc3-968e-b4b32cc3821c}</Project>
       <Name>GeometryCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiltaCore\MiltaCore.csproj">
+      <Project>{eb20c892-cfd1-46b7-98c8-497bea86b613}</Project>
+      <Name>MiltaCore</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

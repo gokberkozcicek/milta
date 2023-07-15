@@ -61,6 +61,10 @@
       <Project>{b652de09-6366-4dc3-968e-b4b32cc3821c}</Project>
       <Name>GeometryCore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MiltaCore\MiltaCore.csproj">
+      <Project>{eb20c892-cfd1-46b7-98c8-497bea86b613}</Project>
+      <Name>MiltaCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

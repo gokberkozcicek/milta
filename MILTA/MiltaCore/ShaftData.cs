@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using GeometryCore;
+namespace MiltaCore
+{
+    public class ShaftData
+    {
+        /// <summary>
+        /// constructor 
+        /// </summary>
+        public ShaftData() { }
+        [Browsable(false)]
+        public string Id { get; set; }=Guid.NewGuid().ToString();
+        [Browsable(false)]
+        public CustomContourCollection InnerContours { get; set; } = new CustomContourCollection();
+        [Browsable(false)]
+        public CustomContourCollection OuterContours { get; set; } = new CustomContourCollection();
+        [Browsable(false)]
+        public List<EntityData> Edges { get { 
+            List<EntityData> edges = new List<EntityData>();
+                InnerContours.ForEach(x=>x.Edges.ForEach(y=>edges.Add(y)));
+                OuterContours.ForEach(x=>x.Edges.ForEach(y => edges.Add(y)));
+                return edges;
+            }
+            set { }
+        }
+        public ShaftContourData GetContourById(string Id)
+        {
+            if (InnerContours.GetContourById(Id)!=null)
+            {
+                return InnerContours.GetContourById(Id);
+            }
+            if (OuterContours.GetContourById(Id) != null)
+            {
+                return OuterContours.GetContourById(Id);
+            }
+            return null;
+        }
+        public void UpdateItems()
+        {
+            InnerContours.UpdateContours();
+            OuterContours.UpdateContours();
+        }
+        [Browsable(false)]
+        public List<PointD> Vertices
+        {
+            get
+            {
+                List<PointD> vertices = new List<PointD>();
+                OuterContours.Vertices.ForEach(x=> vertices.Add(x));
+                InnerContours.Vertices.ForEach(x=> vertices.Add(x));
+                return vertices;
+            }
+            set
+            {
+
+            }
+        }
+        public double Length { get { return OuterContours.Length; }set { } }
+    }
+}

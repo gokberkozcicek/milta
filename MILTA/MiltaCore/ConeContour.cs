@@ -1,14 +1,15 @@
 ﻿using GeometryCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MILTA
+namespace MiltaCore
 {
-    internal class ConeContour:ShaftContourData
+    public class ConeContour:ShaftContourData
     {
         private double _d1 = 30;
         private double _d2 = 40;
@@ -32,10 +33,11 @@ namespace MILTA
         public double D2 { get { return _d2; } set { _d2 = value; } }
         public override double Length { get { return _length; } set { _length = value; } }
         public override string Name { get; set; } = "Cone";
+    
         public override ContourShapesEnum ContourShape { get; set; } = ContourShapesEnum.Cone;
-
+        [Browsable(false)]
         public PointD P1, P2, P3, P4;
-
+        [Browsable(false)]
         public Line L1, L2, L3, L4;
         public override ClosedPath ClosedPath { get { return new ClosedPath(Edges); } }
         public override void SetGeometryEntities()
@@ -49,7 +51,9 @@ namespace MILTA
             L3 = new Line(P3, P4);
             L4 = new Line(P4, P1);
         }
+
         public override List<PointD> Vertices { get { SetGeometryEntities(); return new List<PointD>() { P1, P2, P3, P4 }; } }
+ 
         public override List<EntityData> Edges { get { SetGeometryEntities(); return new List<EntityData>() { L1, L2, L3, L4 }; } }
     }
 }

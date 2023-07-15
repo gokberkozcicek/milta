@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingAreaControlLibrary",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryCore", "GeometryCore\GeometryCore.csproj", "{B652DE09-6366-4DC3-968E-B4B32CC3821C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiltaCore", "MiltaCore\MiltaCore.csproj", "{EB20C892-CFD1-46B7-98C8-497BEA86B613}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B652DE09-6366-4DC3-968E-B4B32CC3821C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B652DE09-6366-4DC3-968E-B4B32CC3821C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B652DE09-6366-4DC3-968E-B4B32CC3821C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB20C892-CFD1-46B7-98C8-497BEA86B613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB20C892-CFD1-46B7-98C8-497BEA86B613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB20C892-CFD1-46B7-98C8-497BEA86B613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB20C892-CFD1-46B7-98C8-497BEA86B613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

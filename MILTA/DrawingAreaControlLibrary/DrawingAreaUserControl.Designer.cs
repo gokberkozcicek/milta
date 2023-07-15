@@ -37,23 +37,23 @@
             this.drawingAreaPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.drawingAreaPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.drawingAreaPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.drawingAreaPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.drawingAreaPictureBox.Name = "drawingAreaPictureBox";
-            this.drawingAreaPictureBox.Size = new System.Drawing.Size(1067, 554);
+            this.drawingAreaPictureBox.Size = new System.Drawing.Size(800, 450);
             this.drawingAreaPictureBox.TabIndex = 0;
             this.drawingAreaPictureBox.TabStop = false;
+            this.drawingAreaPictureBox.ClientSizeChanged += new System.EventHandler(this.drawingAreaPictureBox_ClientSizeChanged);
+            this.drawingAreaPictureBox.SizeChanged += new System.EventHandler(this.drawingAreaPictureBox_SizeChanged);
             this.drawingAreaPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.drawingAreaPictureBox_Paint);
             this.drawingAreaPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.drawingAreaPictureBox_MouseDown);
             this.drawingAreaPictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawingAreaPictureBox_MouseMove);
             // 
             // DrawingAreaUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.drawingAreaPictureBox);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DrawingAreaUserControl";
-            this.Size = new System.Drawing.Size(1067, 554);
+            this.Size = new System.Drawing.Size(800, 450);
             this.Load += new System.EventHandler(this.DrawingAreaUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.drawingAreaPictureBox)).EndInit();
             this.ResumeLayout(false);

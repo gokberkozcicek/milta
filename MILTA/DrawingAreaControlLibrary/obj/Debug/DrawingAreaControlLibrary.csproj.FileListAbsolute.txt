@@ -9,3 +9,5 @@ C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\ob
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.csproj.CopyComplete
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.dll
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\obj\Debug\DrawingAreaControlLibrary.pdb
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\bin\Debug\MiltaCore.dll
+C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\DrawingAreaControlLibrary\bin\Debug\MiltaCore.pdb

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MiltaCore;
 namespace MILTA
 {
     public partial class MainForm : Form
@@ -18,21 +18,18 @@ namespace MILTA
         {
             InitializeComponent();
         }
-        private void UpdateGeometry()
-        {
-            drawingAreaUserControl1.ClearGeometry();
-            shaft.OuterContours.ForEach(x => drawingAreaUserControl1.Geo.AddEntity(x.ClosedPath));
-            drawingAreaUserControl1.UpdateGeometry();
-        }
+
         private void UpdateAll()
         {
+            shaft.UpdateItems();
             UpdateTreeView();
-            UpdateGeometry();
+            drawingAreaUserControl1.UpdateGeometry();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
             shaft = new ShaftData();
             nodePropertyGrid.SelectedObject = shaft;
+            drawingAreaUserControl1.Shaft=shaft;
             UpdateTreeView();
         }
         #region TreeNode
@@ -42,6 +39,7 @@ namespace MILTA
             MiltaTreeNode shaftNode = new MiltaTreeNode();
             shaftNode.ImageIndex = 0;
             shaftNode.SelectedImageIndex = 0;
+            shaftNode.NodeType = MiltaTreeNodeTypesEnum.Shaft;
             shaftNode.Text = "Shaft";
 
             //Inner contours
@@ -49,12 +47,15 @@ namespace MILTA
             innerContourNode.ImageIndex = 1;
             innerContourNode.SelectedImageIndex = 1;
             innerContourNode.Text = "Inner Contour";
+            innerContourNode.NodeType = MiltaTreeNodeTypesEnum.InnerContourHeader;
 
             foreach (var innerContour in shaft.InnerContours)
             {
                 MiltaTreeNode contourNode = new MiltaTreeNode();
                 contourNode.ImageIndex = GetImageIndexByContourShape(innerContour.ContourShape);
                 contourNode.SelectedImageIndex = GetImageIndexByContourShape(innerContour.ContourShape);
+                contourNode.NodeType = MiltaTreeNodeTypesEnum.Contour;
+                contourNode.BaseObjectId = innerContour.Id;
                 contourNode.Text = innerContour.Name;
                 innerContourNode.Nodes.Add(contourNode);
             }
@@ -64,6 +65,7 @@ namespace MILTA
             outerContourNode.ImageIndex = 1;
             outerContourNode.SelectedImageIndex = 1;
             outerContourNode.Text = "Outer Contour";
+            outerContourNode.NodeType = MiltaTreeNodeTypesEnum.OuterContourHeader;
 
             foreach (var outerContour in shaft.OuterContours)
             {
@@ -71,6 +73,8 @@ namespace MILTA
                 contourNode.ImageIndex = GetImageIndexByContourShape(outerContour.ContourShape);
                 contourNode.SelectedImageIndex = GetImageIndexByContourShape(outerContour.ContourShape);
                 contourNode.Text = outerContour.Name;
+                contourNode.BaseObjectId = outerContour.Id;
+                contourNode.NodeType = MiltaTreeNodeTypesEnum.Contour;
                 outerContourNode.Nodes.Add(contourNode);
             }
             shaftNode.Nodes.Add(outerContourNode);
@@ -111,6 +115,8 @@ namespace MILTA
             {
                 case ContourTypesEnum.Inner:
                     cylinder.ContourType = ContourTypesEnum.Inner;
+                    cylinder.Diameter = 10;
+                    cylinder.Length = 10;
                     shaft.InnerContours.Add(cylinder);
                     break;
                 case ContourTypesEnum.Outer:
@@ -131,6 +137,9 @@ namespace MILTA
             {
                 case ContourTypesEnum.Inner:
                     cone.ContourType = ContourTypesEnum.Inner;
+                    cone.D1 = 10;
+                    cone.D2 = 15;
+                    cone.Length = 10;
                     shaft.InnerContours.Add(cone);
                     break;
                 case ContourTypesEnum.Outer:
@@ -169,6 +178,33 @@ namespace MILTA
         private void outerContourToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void mainTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (mainTreeView.SelectedNode != null)
+            {
+                MiltaTreeNode selectedNode = mainTreeView.SelectedNode as MiltaTreeNode;
+                switch (selectedNode.NodeType)
+                {
+                    case MiltaTreeNodeTypesEnum.Shaft:
+                        nodePropertyGrid.SelectedObject = shaft;
+                        break;
+                        break;
+                    case MiltaTreeNodeTypesEnum.Contour:
+                        nodePropertyGrid.SelectedObject=shaft.GetContourById(selectedNode.BaseObjectId);
+
+                        break;
+                    default:
+                        nodePropertyGrid.SelectedObject = null;
+                        break;
+                }
+            }
+        }
+
+        private void nodePropertyGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
+            UpdateAll();
         }
     }
 }

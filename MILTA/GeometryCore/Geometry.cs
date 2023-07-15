@@ -37,9 +37,10 @@ namespace GeometryCore
         {
             return CoordinateTransformer.ToScreen(point);
         }
+        public List<PointD> ZoomPoints { get; set; }
         public void ZoomFit()
         {
-            CoordinateTransformer.Vertices = _entityCollection.Vertices;
+            CoordinateTransformer.Vertices = ZoomPoints;
             CoordinateTransformer.ZoomFit();
         }
         #endregion
