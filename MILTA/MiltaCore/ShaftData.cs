@@ -55,11 +55,16 @@ namespace MiltaCore
         {
             InnerContours.ForEach(x=>x.IsHighlighted = false);
             OuterContours.ForEach(x=>x.IsHighlighted = false);
+            Loads.ForEach(x=>x.IsHighlighted = false);
+
             Bearings.ForEach(x=>x.IsHighlighted = false);
         }
         public void HightlightAllShaft()
         {
             OuterContours.ForEach(x => x.IsHighlighted = true);
+            InnerContours.ForEach(x => x.IsHighlighted = true);
+            Bearings.ForEach(x => x.IsHighlighted = true);
+            Loads.ForEach(x => x.IsHighlighted = true);
         }
         public bool Hightlight(string Id)
         {
@@ -69,6 +74,10 @@ namespace MiltaCore
             }
             if (OuterContours.Highlight(Id))
             {
+                return true;
+            }
+           
+            if (Loads.Highlight(Id)) { 
                 return true;
             }
 

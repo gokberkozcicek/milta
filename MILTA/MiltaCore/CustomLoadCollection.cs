@@ -28,5 +28,18 @@ namespace MiltaCore
         {
             this.ForEach(x => x.SetLoads());
         }
+        public bool Highlight(string Id)
+        {
+            foreach (var item in this)
+            {
+                if (item.Id.Equals(Id))
+                {
+                    item.IsHighlighted = true;
+                    return true;
+                }
+            }
+            return false;
+
+        }
     }
 }
