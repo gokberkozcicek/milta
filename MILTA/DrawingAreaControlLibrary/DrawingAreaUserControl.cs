@@ -11,6 +11,7 @@ using GeometryCore;
 using System.Drawing.Drawing2D;
 using MiltaCore;
 using System.Drawing.Text;
+using System.Xml.Schema;
 
 namespace DrawingAreaControlLibrary
 {
@@ -96,7 +97,32 @@ namespace DrawingAreaControlLibrary
             {
                 DrawBearings(e.Graphics,bearing);
             }
+            DrawLoads(e.Graphics);
+
+
             DrawAxis(e.Graphics);
+        }
+        private void DrawLoads(Graphics g)
+        {
+            foreach (var load in Shaft.Loads)
+            {
+                switch (load.Type)
+                { 
+                    case LoadTypesEnum.Force:
+                        var force = load as ForceLoad;
+                        DrawVerticalArrow(g, force.LocationX, force.MagnitudeY, force.IsHighlighted);
+                        DrawHorizontalArrow(g, force.LocationX, force.MagnitudeX, force.IsHighlighted);
+
+                        break;
+                    case LoadTypesEnum.Moment:
+                        break;
+                    case LoadTypesEnum.Torque:
+                        break;
+                    default:
+                        break;
+                }
+            }
+
         }
         private void DrawText(Graphics g, PointF point, string text, float size = 12F)
         {
@@ -108,6 +134,61 @@ namespace DrawingAreaControlLibrary
             g.TextRenderingHint = TextRenderingHint.AntiAlias;
             
             g.DrawString(text, font, solidBrush, point);
+        }
+
+        private void DrawVerticalArrow(Graphics g,double locationX,double value,bool isHighlighted)
+        {
+            if (value!=0)
+            {
+                PointD startPoint = new PointD(0, 0);
+
+                PointF startPointF = Geo.ToScreen(startPoint.Move(locationX, 0));
+                PointF endPointF = new PointF(startPointF.X, startPointF.Y);
+                endPointF.Y -= 50;
+                Color color = Color.Red;
+                if (isHighlighted)
+                {
+                    color = Color.Blue;
+                }
+                Pen pen = new Pen(color, 10);
+                if (value > 0)
+                {
+                    pen.EndCap = LineCap.ArrowAnchor;
+                }
+                else
+                {
+                    pen.StartCap = LineCap.ArrowAnchor;
+                }
+                g.DrawLine(pen, startPointF, endPointF);
+            }
+
+        }
+        private void DrawHorizontalArrow(Graphics g, double locationX, double value, bool isHighlighted)
+        {
+            if (value != 0)
+            {
+                PointD startPoint = new PointD(0, 0);
+
+                PointF startPointF = Geo.ToScreen(startPoint.Move(locationX, 0));
+                PointF endPointF = new PointF(startPointF.X, startPointF.Y);
+                endPointF.X += 50;
+                Color color = Color.Red;
+                if (isHighlighted)
+                {
+                    color = Color.Blue;
+                }
+                Pen pen = new Pen(color, 10);
+                if (value < 0)
+                {
+                    pen.EndCap = LineCap.ArrowAnchor;
+                }
+                else
+                {
+                    pen.StartCap = LineCap.ArrowAnchor;
+                }
+                g.DrawLine(pen, startPointF, endPointF);
+            }
+
         }
         private void DrawAxis(Graphics g) { 
             PointF centerPoint=Geo.ToScreen(new PointD(0,0));
