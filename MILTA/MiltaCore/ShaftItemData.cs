@@ -19,6 +19,7 @@ namespace MiltaCore
         [Browsable(false)]
         public PointD StartPoint { get; set; } = new PointD();
         public virtual double LocationX { get; set; } = 0;
+        [Browsable(false)]
         public bool IsHighlighted { get; set; } = false;
     }
 }

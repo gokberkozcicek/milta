@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node0");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node3");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Node4");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Node0");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node3");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Node4");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,22 +51,24 @@
             this.sidebarToolStrip = new System.Windows.Forms.ToolStrip();
             this.nodePropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.drawingAreaToolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.drawingAreaUserControl1 = new DrawingAreaControlLibrary.DrawingAreaUserControl();
             this.outerContourToolStrip = new System.Windows.Forms.ToolStrip();
             this.innerContourToolStrip = new System.Windows.Forms.ToolStrip();
-            this.bearingToolStrip = new System.Windows.Forms.ToolStrip();
-            this.drawingAreaUserControl1 = new DrawingAreaControlLibrary.DrawingAreaUserControl();
             this.loadToolStrip = new System.Windows.Forms.ToolStrip();
+            this.bearingToolStrip = new System.Windows.Forms.ToolStrip();
+            this.criticalSectionToolStrip = new System.Windows.Forms.ToolStrip();
             this.upToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.downToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deleteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.forceToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.momentToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.torsionToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addCylinderToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addConeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addInnerCylinderToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addInnerConeToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.forceToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.momentToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.torsionToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addBearingToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.criticalSectionToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -93,8 +95,9 @@
             this.drawingAreaToolStripContainer.SuspendLayout();
             this.outerContourToolStrip.SuspendLayout();
             this.innerContourToolStrip.SuspendLayout();
-            this.bearingToolStrip.SuspendLayout();
             this.loadToolStrip.SuspendLayout();
+            this.bearingToolStrip.SuspendLayout();
+            this.criticalSectionToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -215,22 +218,22 @@
             this.mainTreeView.ImageList = this.treeViewImageList;
             this.mainTreeView.Location = new System.Drawing.Point(0, 25);
             this.mainTreeView.Name = "mainTreeView";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "Node0";
-            treeNode2.Name = "Node1";
-            treeNode2.Text = "Node1";
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Node2";
-            treeNode4.Name = "Node3";
-            treeNode4.Text = "Node3";
-            treeNode5.Name = "Node4";
-            treeNode5.Text = "Node4";
+            treeNode6.Name = "Node0";
+            treeNode6.Text = "Node0";
+            treeNode7.Name = "Node1";
+            treeNode7.Text = "Node1";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "Node2";
+            treeNode9.Name = "Node3";
+            treeNode9.Text = "Node3";
+            treeNode10.Name = "Node4";
+            treeNode10.Text = "Node4";
             this.mainTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10});
             this.mainTreeView.SelectedImageIndex = 0;
             this.mainTreeView.Size = new System.Drawing.Size(278, 108);
             this.mainTreeView.TabIndex = 1;
@@ -296,6 +299,16 @@
             // drawingAreaToolStripContainer.TopToolStripPanel
             // 
             this.drawingAreaToolStripContainer.TopToolStripPanel.Controls.Add(this.bearingToolStrip);
+            this.drawingAreaToolStripContainer.TopToolStripPanel.Controls.Add(this.criticalSectionToolStrip);
+            // 
+            // drawingAreaUserControl1
+            // 
+            this.drawingAreaUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drawingAreaUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.drawingAreaUserControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.drawingAreaUserControl1.Name = "drawingAreaUserControl1";
+            this.drawingAreaUserControl1.Size = new System.Drawing.Size(515, 255);
+            this.drawingAreaUserControl1.TabIndex = 0;
             // 
             // outerContourToolStrip
             // 
@@ -320,26 +333,6 @@
             this.innerContourToolStrip.Size = new System.Drawing.Size(24, 57);
             this.innerContourToolStrip.TabIndex = 1;
             // 
-            // bearingToolStrip
-            // 
-            this.bearingToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.bearingToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addBearingToolStripButton});
-            this.bearingToolStrip.Location = new System.Drawing.Point(3, 0);
-            this.bearingToolStrip.Name = "bearingToolStrip";
-            this.bearingToolStrip.Size = new System.Drawing.Size(35, 25);
-            this.bearingToolStrip.TabIndex = 1;
-            this.bearingToolStrip.Text = "toolStrip1";
-            // 
-            // drawingAreaUserControl1
-            // 
-            this.drawingAreaUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drawingAreaUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.drawingAreaUserControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.drawingAreaUserControl1.Name = "drawingAreaUserControl1";
-            this.drawingAreaUserControl1.Size = new System.Drawing.Size(515, 255);
-            this.drawingAreaUserControl1.TabIndex = 0;
-            // 
             // loadToolStrip
             // 
             this.loadToolStrip.Dock = System.Windows.Forms.DockStyle.None;
@@ -352,6 +345,27 @@
             this.loadToolStrip.Size = new System.Drawing.Size(24, 80);
             this.loadToolStrip.TabIndex = 1;
             this.loadToolStrip.Text = "toolStrip1";
+            // 
+            // bearingToolStrip
+            // 
+            this.bearingToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.bearingToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBearingToolStripButton});
+            this.bearingToolStrip.Location = new System.Drawing.Point(3, 0);
+            this.bearingToolStrip.Name = "bearingToolStrip";
+            this.bearingToolStrip.Size = new System.Drawing.Size(35, 25);
+            this.bearingToolStrip.TabIndex = 1;
+            this.bearingToolStrip.Text = "toolStrip1";
+            // 
+            // criticalSectionToolStrip
+            // 
+            this.criticalSectionToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.criticalSectionToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.criticalSectionToolStripButton});
+            this.criticalSectionToolStrip.Location = new System.Drawing.Point(38, 0);
+            this.criticalSectionToolStrip.Name = "criticalSectionToolStrip";
+            this.criticalSectionToolStrip.Size = new System.Drawing.Size(66, 25);
+            this.criticalSectionToolStrip.TabIndex = 2;
             // 
             // upToolStripButton
             // 
@@ -379,36 +393,6 @@
             this.deleteToolStripButton.Name = "deleteToolStripButton";
             this.deleteToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.deleteToolStripButton.Text = "toolStripButton3";
-            // 
-            // forceToolStripButton
-            // 
-            this.forceToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.forceToolStripButton.Image = global::MILTA.Properties.Resources.force;
-            this.forceToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.forceToolStripButton.Name = "forceToolStripButton";
-            this.forceToolStripButton.Size = new System.Drawing.Size(30, 20);
-            this.forceToolStripButton.Text = "toolStripButton1";
-            this.forceToolStripButton.Click += new System.EventHandler(this.forceToolStripButton_Click);
-            // 
-            // momentToolStripButton
-            // 
-            this.momentToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.momentToolStripButton.Image = global::MILTA.Properties.Resources.moment;
-            this.momentToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.momentToolStripButton.Name = "momentToolStripButton";
-            this.momentToolStripButton.Size = new System.Drawing.Size(30, 20);
-            this.momentToolStripButton.Text = "toolStripButton2";
-            this.momentToolStripButton.Click += new System.EventHandler(this.momentToolStripButton_Click);
-            // 
-            // torsionToolStripButton
-            // 
-            this.torsionToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.torsionToolStripButton.Image = global::MILTA.Properties.Resources.torsion;
-            this.torsionToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.torsionToolStripButton.Name = "torsionToolStripButton";
-            this.torsionToolStripButton.Size = new System.Drawing.Size(30, 20);
-            this.torsionToolStripButton.Text = "toolStripButton3";
-            this.torsionToolStripButton.Click += new System.EventHandler(this.torsionToolStripButton_Click);
             // 
             // addCylinderToolStripButton
             // 
@@ -450,6 +434,36 @@
             this.addInnerConeToolStripButton.Text = "toolStripButton2";
             this.addInnerConeToolStripButton.Click += new System.EventHandler(this.addInnerConeToolStripButton_Click);
             // 
+            // forceToolStripButton
+            // 
+            this.forceToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.forceToolStripButton.Image = global::MILTA.Properties.Resources.force;
+            this.forceToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.forceToolStripButton.Name = "forceToolStripButton";
+            this.forceToolStripButton.Size = new System.Drawing.Size(22, 20);
+            this.forceToolStripButton.Text = "toolStripButton1";
+            this.forceToolStripButton.Click += new System.EventHandler(this.forceToolStripButton_Click);
+            // 
+            // momentToolStripButton
+            // 
+            this.momentToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.momentToolStripButton.Image = global::MILTA.Properties.Resources.moment;
+            this.momentToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.momentToolStripButton.Name = "momentToolStripButton";
+            this.momentToolStripButton.Size = new System.Drawing.Size(22, 20);
+            this.momentToolStripButton.Text = "toolStripButton2";
+            this.momentToolStripButton.Click += new System.EventHandler(this.momentToolStripButton_Click);
+            // 
+            // torsionToolStripButton
+            // 
+            this.torsionToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.torsionToolStripButton.Image = global::MILTA.Properties.Resources.torsion;
+            this.torsionToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.torsionToolStripButton.Name = "torsionToolStripButton";
+            this.torsionToolStripButton.Size = new System.Drawing.Size(22, 20);
+            this.torsionToolStripButton.Text = "toolStripButton3";
+            this.torsionToolStripButton.Click += new System.EventHandler(this.torsionToolStripButton_Click);
+            // 
             // addBearingToolStripButton
             // 
             this.addBearingToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -459,6 +473,16 @@
             this.addBearingToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.addBearingToolStripButton.Text = "toolStripButton1";
             this.addBearingToolStripButton.Click += new System.EventHandler(this.addBearingToolStripButton_Click);
+            // 
+            // criticalSectionToolStripButton
+            // 
+            this.criticalSectionToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.criticalSectionToolStripButton.Image = global::MILTA.Properties.Resources.splitting;
+            this.criticalSectionToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.criticalSectionToolStripButton.Name = "criticalSectionToolStripButton";
+            this.criticalSectionToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.criticalSectionToolStripButton.Text = "toolStripButton1";
+            this.criticalSectionToolStripButton.Click += new System.EventHandler(this.criticalSectionToolStripButton_Click);
             // 
             // newToolStripButton
             // 
@@ -573,10 +597,12 @@
             this.outerContourToolStrip.PerformLayout();
             this.innerContourToolStrip.ResumeLayout(false);
             this.innerContourToolStrip.PerformLayout();
-            this.bearingToolStrip.ResumeLayout(false);
-            this.bearingToolStrip.PerformLayout();
             this.loadToolStrip.ResumeLayout(false);
             this.loadToolStrip.PerformLayout();
+            this.bearingToolStrip.ResumeLayout(false);
+            this.bearingToolStrip.PerformLayout();
+            this.criticalSectionToolStrip.ResumeLayout(false);
+            this.criticalSectionToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,6 +650,8 @@
         private System.Windows.Forms.ToolStripButton forceToolStripButton;
         private System.Windows.Forms.ToolStripButton momentToolStripButton;
         private System.Windows.Forms.ToolStripButton torsionToolStripButton;
+        private System.Windows.Forms.ToolStrip criticalSectionToolStrip;
+        private System.Windows.Forms.ToolStripButton criticalSectionToolStripButton;
     }
 }
 

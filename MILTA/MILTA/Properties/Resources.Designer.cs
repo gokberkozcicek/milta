@@ -133,6 +133,16 @@ namespace MILTA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap splitting {
+            get {
+                object obj = ResourceManager.GetObject("splitting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap torsion {
             get {
                 object obj = ResourceManager.GetObject("torsion", resourceCulture);

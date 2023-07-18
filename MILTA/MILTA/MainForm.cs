@@ -116,6 +116,26 @@ namespace MILTA
                 loadsHeaderNode.Nodes.Add(loadNode);
             }
             shaftNode.Nodes.Add(loadsHeaderNode);
+
+            //critical sections
+            MiltaTreeNode critcalSectionsHeaderNode = new MiltaTreeNode();
+            critcalSectionsHeaderNode.ImageIndex = 1;
+            critcalSectionsHeaderNode.SelectedImageIndex = 1;
+            critcalSectionsHeaderNode.Text = "Critical Sections";
+            critcalSectionsHeaderNode.NodeType = MiltaTreeNodeTypesEnum.CriticalSectionsHeader;
+
+            foreach (var criticalSection in shaft.CrticalSections)
+            {
+                MiltaTreeNode criticalSectionNode = new MiltaTreeNode();
+                criticalSectionNode.ImageIndex = 0;
+                criticalSectionNode.SelectedImageIndex = 0;
+                criticalSectionNode.Text = criticalSection.Name;
+                criticalSectionNode.BaseObjectId = criticalSection.Id;
+                criticalSectionNode.NodeType = MiltaTreeNodeTypesEnum.CriticalSection;
+                critcalSectionsHeaderNode.Nodes.Add(criticalSectionNode);
+            }
+            shaftNode.Nodes.Add(critcalSectionsHeaderNode);
+            //
             mainTreeView.Nodes.Add(shaftNode);
             mainTreeView.ExpandAll();
         }
@@ -240,6 +260,10 @@ namespace MILTA
                         nodePropertyGrid.SelectedObject = shaft.GetLoadById(selectedNode.BaseObjectId);
                         shaft.Hightlight(selectedNode.BaseObjectId);
                         break;
+                    case MiltaTreeNodeTypesEnum.CriticalSection:
+                        nodePropertyGrid.SelectedObject = shaft.GetCriticalSectionById(selectedNode.BaseObjectId);
+                        shaft.Hightlight(selectedNode.BaseObjectId);
+                        break;
                     default:
                         nodePropertyGrid.SelectedObject = null;
                         break;
@@ -279,6 +303,13 @@ namespace MILTA
         {
             TorqueLoad dummyTorsion=new TorqueLoad();
             shaft.Loads.Add(dummyTorsion);
+            UpdateAll();
+        }
+
+        private void criticalSectionToolStripButton_Click(object sender, EventArgs e)
+        {
+            CriticalSectionData cs=new CriticalSectionData();   
+            shaft.CrticalSections.Add(cs);
             UpdateAll();
         }
     }

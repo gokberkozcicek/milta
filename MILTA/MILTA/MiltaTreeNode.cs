@@ -22,7 +22,9 @@ namespace MILTA
         BearingsHeader,
         Bearing,
         LoadsHeader,
-        Load
+        Load,
+        CriticalSection,
+        CriticalSectionsHeader
 
     }
 }

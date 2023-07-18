@@ -127,6 +127,9 @@
   <data name="up-arrow-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\up-arrow-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="torsion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\torsion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wire-trapezoid-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wire-trapezoid-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +160,7 @@
   <data name="recycle-bin-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recycle-bin-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="torsion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\torsion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="splitting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splitting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

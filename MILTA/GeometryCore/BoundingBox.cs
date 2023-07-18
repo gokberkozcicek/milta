@@ -24,18 +24,22 @@ namespace GeometryCore
         }
         public void SetBoundingBox()
         {
-            var x_query=from PointD point in _points select point.X;
-            var y_query=from PointD point in _points select point.Y;
+            if (_points.Count>0)
+            {
+                var x_query = from PointD point in _points select point.X;
+                var y_query = from PointD point in _points select point.Y;
 
-            P1=new PointD(x_query.Min(),y_query.Max());
-            P2=new PointD(x_query.Max(),y_query.Max());
-            P3=new PointD(x_query.Max(),y_query.Min());
-            P4=new PointD(x_query.Min(),y_query.Min());
+                P1 = new PointD(x_query.Min(), y_query.Max());
+                P2 = new PointD(x_query.Max(), y_query.Max());
+                P3 = new PointD(x_query.Max(), y_query.Min());
+                P4 = new PointD(x_query.Min(), y_query.Min());
 
-            Width=P1.DistanceToPoint(P2);
-            Height=P1.DistanceToPoint(P4);
+                Width = P1.DistanceToPoint(P2);
+                Height = P1.DistanceToPoint(P4);
 
-            CenterPoint = AnalyticalCalculations.GetCenterPointsOfPointList(new List<PointD>() { P1,P2,P3,P4});
+                CenterPoint = AnalyticalCalculations.GetCenterPointsOfPointList(new List<PointD>() { P1, P2, P3, P4 });
+
+            }
         }
     }
 }

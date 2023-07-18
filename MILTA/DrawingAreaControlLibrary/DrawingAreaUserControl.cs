@@ -12,6 +12,7 @@ using System.Drawing.Drawing2D;
 using MiltaCore;
 using System.Drawing.Text;
 using System.Xml.Schema;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DrawingAreaControlLibrary
 {
@@ -101,6 +102,14 @@ namespace DrawingAreaControlLibrary
 
 
             DrawAxis(e.Graphics);
+            DrawCriticalSections(e.Graphics);
+        }
+        private void DrawCriticalSections(Graphics g)
+        {
+            foreach (var cs in Shaft.CrticalSections)
+            {
+                DrawCriticalSection(g, cs);
+            }
         }
         private void DrawLoads(Graphics g)
         {
@@ -123,6 +132,26 @@ namespace DrawingAreaControlLibrary
                 }
             }
 
+        }
+        private void DrawAngledText(Graphics g, PointF point, string text, float angle, Font font = null)
+        {
+           
+            if (font == null)
+                font = new Font("Consolas", 12);
+
+            SizeF textSize = g.MeasureString(text, font);
+
+            PointF center = new PointF(point.X + textSize.Height / 2, point.Y + textSize.Width / 2);
+
+            g.TranslateTransform(center.X, center.Y);
+
+            g.RotateTransform(angle);
+
+            g.TranslateTransform(-textSize.Height / 2, -textSize.Width / 2);
+
+            g.DrawString(text, font, Brushes.Black, 0, 0);
+  
+            g.ResetTransform();
         }
         private void DrawText(Graphics g, PointF point, string text, float size = 12F)
         {
@@ -189,6 +218,25 @@ namespace DrawingAreaControlLibrary
                 g.DrawLine(pen, startPointF, endPointF);
             }
 
+        }
+        private void DrawCriticalSection(Graphics g,CriticalSectionData cs) {
+        
+            if (Shaft.BoundingBox.Height!=0)
+            {
+                PointD location = new PointD(cs.LocationX, 0);
+                float height = ((float)Shaft.BoundingBox.Height * Geo.ZoomFactor) * 2F;
+                PointF locationF = Geo.ToScreen(location);
+                PointF topLocationF = new PointF(locationF.X, locationF.Y);
+                topLocationF.Y -= height/2;
+
+                PointF bottomLocationF = new PointF(locationF.X, locationF.Y+height/2);
+
+                Pen pen = new Pen(Color.Black, 2);
+                pen.DashStyle = DashStyle.Dash;
+                g.DrawLine(pen, topLocationF, bottomLocationF);
+
+                DrawAngledText(g, new PointF(topLocationF.X-15F,topLocationF.Y), cs.Name, -90F, null);
+            }
         }
         private void DrawAxis(Graphics g) { 
             PointF centerPoint=Geo.ToScreen(new PointD(0,0));

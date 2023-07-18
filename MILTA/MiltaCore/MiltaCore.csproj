@@ -44,6 +44,8 @@
     <Compile Include="BallBearing.cs" />
     <Compile Include="BearingData.cs" />
     <Compile Include="ConeContour.cs" />
+    <Compile Include="CriticalSectionData.cs" />
+    <Compile Include="CustomCriticalSectionCollection.cs" />
     <Compile Include="CustomLoadCollection.cs" />
     <Compile Include="TorqueLoad.cs" />
     <Compile Include="CustomBearingCollection.cs" />

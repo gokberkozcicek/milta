@@ -137,5 +137,8 @@
   <ItemGroup>
     <None Include="Resources\torsion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splitting.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

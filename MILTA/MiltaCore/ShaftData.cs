@@ -24,6 +24,8 @@ namespace MiltaCore
         [Browsable(false)]
         public CustomLoadCollection Loads { get; set; } = new CustomLoadCollection();
         [Browsable(false)]
+        public CustomCriticalSectionCollection CrticalSections { get; set; } = new CustomCriticalSectionCollection();
+        [Browsable(false)]
         public List<EntityData> Edges { get { 
             List<EntityData> edges = new List<EntityData>();
                 InnerContours.ForEach(x=>x.Edges.ForEach(y=>edges.Add(y)));
@@ -32,6 +34,11 @@ namespace MiltaCore
             }
             set { }
         }
+        public BoundingBox BoundingBox { get {
+                BoundingBox bb = new BoundingBox(this.Vertices);
+                bb.SetBoundingBox();
+                return bb;
+            } set { } }
         public ShaftContourData GetContourById(string Id)
         {
             if (InnerContours.GetContourById(Id)!=null)
@@ -55,6 +62,7 @@ namespace MiltaCore
         {
             InnerContours.ForEach(x=>x.IsHighlighted = false);
             OuterContours.ForEach(x=>x.IsHighlighted = false);
+            CrticalSections.ForEach(x=>x.IsHighlighted = false);
             Loads.ForEach(x=>x.IsHighlighted = false);
 
             Bearings.ForEach(x=>x.IsHighlighted = false);
@@ -80,12 +88,19 @@ namespace MiltaCore
             if (Loads.Highlight(Id)) { 
                 return true;
             }
+            if (CrticalSections.Highlight(Id)) { 
+                return true;
+            }
 
             return false;
         }
         public BearingData GetBearingById(string Id)
         {
             return Bearings.GetBearingById(Id);
+        }
+    public CriticalSectionData GetCriticalSectionById(string Id)
+        {
+            return CrticalSections.GetCriticalSectionById(Id);
         }
    
         public LoadData GetLoadById(string Id) {
