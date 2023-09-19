@@ -7,3 +7,12 @@ C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MiltaCore\obj\Debug\MiltaCor
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.csproj.CopyComplete
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.dll
 C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.pdb
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\bin\Debug\MiltaCore.dll
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\bin\Debug\MiltaCore.pdb
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\bin\Debug\GeometryCore.dll
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\bin\Debug\GeometryCore.pdb
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.csproj.AssemblyReference.cache
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.csproj.CoreCompileInputs.cache
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.csproj.CopyComplete
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.dll
+C:\Users\Adem\source\repos\milta\MILTA\MiltaCore\obj\Debug\MiltaCore.pdb

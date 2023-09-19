@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiltaCore;
+using FemCore;
 namespace MILTA
 {
     public partial class MainForm : Form
@@ -311,6 +312,16 @@ namespace MILTA
             CriticalSectionData cs=new CriticalSectionData();   
             shaft.CrticalSections.Add(cs);
             UpdateAll();
+        }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            ShaftFemSolver shaftFemSolver = new ShaftFemSolver();
+            List<double> shaftDiameters = new List<double>();
+            shaftDiameters.Add(5);
+
+            shaftFemSolver.SetSolverInput(210000, 79300, 20, 1, shaftDiameters);
+            shaftFemSolver.Solve();
         }
     }
 }
