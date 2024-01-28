@@ -1,8 +1,0 @@
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\bin\Debug\BeamFEATestConsole.exe.config
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\bin\Debug\BeamFEATestConsole.exe
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\bin\Debug\BeamFEATestConsole.pdb
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\obj\Debug\BeamFEATestConsole.csproj.AssemblyReference.cache
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\obj\Debug\BeamFEATestConsole.csproj.SuggestedBindingRedirects.cache
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\obj\Debug\BeamFEATestConsole.csproj.CoreCompileInputs.cache
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\obj\Debug\BeamFEATestConsole.exe
-C:\Users\gokbe\OneDrive\Belgeler\GitHub\milta\MiltaGUI\BeamFEATestConsole\obj\Debug\BeamFEATestConsole.pdb
