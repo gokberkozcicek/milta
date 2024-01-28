@@ -1,0 +1,6 @@
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamFEA\bin\Debug\BeamFEA.dll
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamFEA\bin\Debug\BeamFEA.pdb
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamFEA\obj\Debug\BeamFEA.csproj.AssemblyReference.cache
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamFEA\obj\Debug\BeamFEA.csproj.CoreCompileInputs.cache
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamFEA\obj\Debug\BeamFEA.dll
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamFEA\obj\Debug\BeamFEA.pdb

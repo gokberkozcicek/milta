@@ -1,0 +1,7 @@
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamSolverTest\bin\Debug\BeamSolverTest.exe.config
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamSolverTest\bin\Debug\BeamSolverTest.exe
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamSolverTest\bin\Debug\BeamSolverTest.pdb
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamSolverTest\obj\Debug\BeamSolverTest.csproj.AssemblyReference.cache
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamSolverTest\obj\Debug\BeamSolverTest.csproj.CoreCompileInputs.cache
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamSolverTest\obj\Debug\BeamSolverTest.exe
+C:\Users\gokbe\OneDrive\Masaüstü\test\BeamFEA\BeamSolverTest\obj\Debug\BeamSolverTest.pdb
