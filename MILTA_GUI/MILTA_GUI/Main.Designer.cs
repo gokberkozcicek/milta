@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +48,8 @@
             this.sideBarSplitContainer = new System.Windows.Forms.SplitContainer();
             this.sideBarToolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.drawingAreaSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.mainTreeView = new System.Windows.Forms.TreeView();
+            this.mainIımageList = new System.Windows.Forms.ImageList(this.components);
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
@@ -56,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sideBarSplitContainer)).BeginInit();
             this.sideBarSplitContainer.Panel1.SuspendLayout();
             this.sideBarSplitContainer.SuspendLayout();
+            this.sideBarToolStripContainer.ContentPanel.SuspendLayout();
             this.sideBarToolStripContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drawingAreaSplitContainer)).BeginInit();
             this.drawingAreaSplitContainer.SuspendLayout();
@@ -226,6 +230,7 @@
             // 
             // sideBarToolStripContainer.ContentPanel
             // 
+            this.sideBarToolStripContainer.ContentPanel.Controls.Add(this.mainTreeView);
             this.sideBarToolStripContainer.ContentPanel.Size = new System.Drawing.Size(387, 294);
             this.sideBarToolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sideBarToolStripContainer.Location = new System.Drawing.Point(0, 0);
@@ -245,6 +250,25 @@
             this.drawingAreaSplitContainer.SplitterDistance = 312;
             this.drawingAreaSplitContainer.SplitterWidth = 5;
             this.drawingAreaSplitContainer.TabIndex = 0;
+            // 
+            // mainTreeView
+            // 
+            this.mainTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTreeView.Location = new System.Drawing.Point(0, 0);
+            this.mainTreeView.Name = "mainTreeView";
+            this.mainTreeView.Size = new System.Drawing.Size(387, 294);
+            this.mainTreeView.TabIndex = 0;
+            // 
+            // mainIımageList
+            // 
+            this.mainIımageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("mainIımageList.ImageStream")));
+            this.mainIımageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.mainIımageList.Images.SetKeyName(0, "document-management.png");
+            this.mainIımageList.Images.SetKeyName(1, "differential.png");
+            this.mainIımageList.Images.SetKeyName(2, "rectangle.png");
+            this.mainIımageList.Images.SetKeyName(3, "next.png");
+            this.mainIımageList.Images.SetKeyName(4, "plus.png");
+            this.mainIımageList.Images.SetKeyName(5, "cancel.png");
             // 
             // Main
             // 
@@ -270,6 +294,7 @@
             this.sideBarSplitContainer.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sideBarSplitContainer)).EndInit();
             this.sideBarSplitContainer.ResumeLayout(false);
+            this.sideBarToolStripContainer.ContentPanel.ResumeLayout(false);
             this.sideBarToolStripContainer.ResumeLayout(false);
             this.sideBarToolStripContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drawingAreaSplitContainer)).EndInit();
@@ -299,6 +324,8 @@
         private System.Windows.Forms.SplitContainer sideBarSplitContainer;
         private System.Windows.Forms.ToolStripContainer sideBarToolStripContainer;
         private System.Windows.Forms.SplitContainer drawingAreaSplitContainer;
+        private System.Windows.Forms.TreeView mainTreeView;
+        private System.Windows.Forms.ImageList mainIımageList;
     }
 }
 

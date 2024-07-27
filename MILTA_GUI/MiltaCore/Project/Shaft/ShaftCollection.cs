@@ -15,5 +15,11 @@ namespace MiltaCore
         {
             base.Add(data);
         }
+        public ShaftData AddDummyShaft()
+        {
+            ShaftData shaft=new ShaftData();
+            Add(shaft);
+            return shaft;
+        }
     }
 }
