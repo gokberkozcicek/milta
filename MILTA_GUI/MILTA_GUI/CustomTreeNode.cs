@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kitware.VTK;
 using MiltaCore;
 namespace MILTA_GUI
 {
@@ -11,14 +12,29 @@ namespace MILTA_GUI
     {
         internal CustomNodeStatus Status { get; set; }
         internal IMiltaObject BaseObject { get; set; }
+        internal bool IsPropertyGridObject { get; set; } = true;
         public CustomTreeNode(IMiltaObject baseObject)
         {
             this.BaseObject = baseObject;
             this.Text = baseObject.Name;
             this.Status = CustomNodeStatus.Valid;
             SetNodeImages();
+            SetPropertyGridStatus();
         }
-
+        internal void SetPropertyGridStatus()
+        {
+            switch (BaseObject.MiltaObjectType)
+            {
+                case MiltaObjectTypes.ShaftCollection:
+                    IsPropertyGridObject = false;
+                    break;
+                case MiltaObjectTypes.SectionCollection:
+                    IsPropertyGridObject = false;
+                    break;
+                default:
+                    break;
+            }
+        }
         internal void SetNodeImages()
         {
             switch (BaseObject.MiltaObjectType)

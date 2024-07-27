@@ -60,5 +60,21 @@ namespace MILTA_GUI
             mainTreeView.Nodes.Add(projectNode);
             mainTreeView.ExpandAll();
         }
+
+        private void mainTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            CustomTreeNode selectedNode = e.Node as CustomTreeNode;
+            if (selectedNode != null)
+            {
+                if (selectedNode.IsPropertyGridObject)
+                {
+                    propertyGrid1.SelectedObject = selectedNode.BaseObject;
+                }
+                else
+                {
+                    propertyGrid1.SelectedObject=null;
+                }
+            }
+        }
     }
 }

@@ -50,6 +50,7 @@
             this.drawingAreaSplitContainer = new System.Windows.Forms.SplitContainer();
             this.mainTreeView = new System.Windows.Forms.TreeView();
             this.mainIımageList = new System.Windows.Forms.ImageList(this.components);
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
@@ -58,6 +59,7 @@
             this.mainSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sideBarSplitContainer)).BeginInit();
             this.sideBarSplitContainer.Panel1.SuspendLayout();
+            this.sideBarSplitContainer.Panel2.SuspendLayout();
             this.sideBarSplitContainer.SuspendLayout();
             this.sideBarToolStripContainer.ContentPanel.SuspendLayout();
             this.sideBarToolStripContainer.SuspendLayout();
@@ -220,6 +222,10 @@
             // sideBarSplitContainer.Panel1
             // 
             this.sideBarSplitContainer.Panel1.Controls.Add(this.sideBarToolStripContainer);
+            // 
+            // sideBarSplitContainer.Panel2
+            // 
+            this.sideBarSplitContainer.Panel2.Controls.Add(this.propertyGrid1);
             this.sideBarSplitContainer.Size = new System.Drawing.Size(389, 572);
             this.sideBarSplitContainer.SplitterDistance = 321;
             this.sideBarSplitContainer.SplitterWidth = 5;
@@ -258,6 +264,7 @@
             this.mainTreeView.Name = "mainTreeView";
             this.mainTreeView.Size = new System.Drawing.Size(387, 294);
             this.mainTreeView.TabIndex = 0;
+            this.mainTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.mainTreeView_NodeMouseClick);
             // 
             // mainIımageList
             // 
@@ -269,6 +276,15 @@
             this.mainIımageList.Images.SetKeyName(3, "next.png");
             this.mainIımageList.Images.SetKeyName(4, "plus.png");
             this.mainIımageList.Images.SetKeyName(5, "cancel.png");
+            // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.propertyGrid1.Size = new System.Drawing.Size(387, 244);
+            this.propertyGrid1.TabIndex = 0;
             // 
             // Main
             // 
@@ -292,6 +308,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
             this.sideBarSplitContainer.Panel1.ResumeLayout(false);
+            this.sideBarSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sideBarSplitContainer)).EndInit();
             this.sideBarSplitContainer.ResumeLayout(false);
             this.sideBarToolStripContainer.ContentPanel.ResumeLayout(false);
@@ -326,6 +343,7 @@
         private System.Windows.Forms.SplitContainer drawingAreaSplitContainer;
         private System.Windows.Forms.TreeView mainTreeView;
         private System.Windows.Forms.ImageList mainIımageList;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
     }
 }
 
