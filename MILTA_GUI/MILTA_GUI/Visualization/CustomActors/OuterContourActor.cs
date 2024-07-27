@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace MILTA_GUI
 {
-    public class OuterContourActor
+    public class OuterContourActor: CustomActor
     {
+        public override CustomActorTypes ActorTypes { get; set; }=CustomActorTypes.OuterContour;
         public CellCollection ContourCells { get; set; }
         public vtkActor GetActor()
         {
@@ -51,6 +52,7 @@ namespace MILTA_GUI
             actor.SetMapper(mapper);
             actor.GetProperty().EdgeVisibilityOn();
             actor.GetProperty().SetEdgeColor(0, 0, 0);
+            Actor = actor;
             return actor;
         }
     }

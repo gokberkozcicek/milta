@@ -16,6 +16,7 @@ namespace MILTA_GUI
         public ShaftData Shaft { get; set; }
         RenderWindowControl renderWindowControl;
         vtkRenderer baseRenderer;
+        ActorCollection Actors;
         public miltaVTKControl()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace MILTA_GUI
             renderWindowControl.Dock = DockStyle.Fill;
             renderWindowControl.Load += RenderWindowControl_Load;
             baseRenderer = vtkRenderer.New();
+            Actors = new ActorCollection();
         }
 
         private void RenderWindowControl_Load(object sender, EventArgs e)
@@ -33,11 +35,10 @@ namespace MILTA_GUI
         public void DrawGeometry()
         {
             RemoveAllViewProps();
-            
-
             renderWindowControl.RenderWindow.AddRenderer(baseRenderer);
             OuterContourActor contourActor = new OuterContourActor();
             contourActor.ContourCells = Shaft.OuterSections.GetCells();
+            Actors.Add(contourActor);
 
             baseRenderer.AddActor(contourActor.GetActor());
             baseRenderer.SetBackground(0.1, 0.2, 0.4);  

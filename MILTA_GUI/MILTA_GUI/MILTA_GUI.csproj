@@ -79,6 +79,8 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visualization\CustomActors\ActorCollection.cs" />
+    <Compile Include="Visualization\CustomActors\CustomActor.cs" />
     <Compile Include="Visualization\CustomActors\OuterContourActor.cs" />
     <Compile Include="Visualization\miltaVTKControl.cs">
       <SubType>UserControl</SubType>
