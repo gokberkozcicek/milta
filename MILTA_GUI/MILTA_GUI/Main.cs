@@ -12,9 +12,21 @@ namespace MILTA_GUI
 {
     public partial class Main : Form
     {
+        miltaVTKControl miltaVTKControl;
         public Main()
         {
             InitializeComponent();
+            InitVTKControl();
+        }
+        private void InitVTKControl()
+        {
+            miltaVTKControl = new miltaVTKControl();
+            miltaVTKControl.Dock = DockStyle.Fill;
+        }
+        private void Main_Load(object sender, EventArgs e)
+        {
+            drawingAreaSplitContainer.Panel1.Controls.Add(miltaVTKControl);
+
         }
     }
 }

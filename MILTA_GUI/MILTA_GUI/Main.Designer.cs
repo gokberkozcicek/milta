@@ -32,7 +32,6 @@
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
-            this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -43,18 +42,23 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.sideBarSplitContainer = new System.Windows.Forms.SplitContainer();
             this.sideBarToolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.drawingAreaSplitContainer = new System.Windows.Forms.SplitContainer();
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
+            this.mainSplitContainer.Panel2.SuspendLayout();
             this.mainSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sideBarSplitContainer)).BeginInit();
             this.sideBarSplitContainer.Panel1.SuspendLayout();
             this.sideBarSplitContainer.SuspendLayout();
             this.sideBarToolStripContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drawingAreaSplitContainer)).BeginInit();
+            this.drawingAreaSplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuStrip
@@ -91,14 +95,6 @@
             this.mainToolStrip.Size = new System.Drawing.Size(1171, 25);
             this.mainToolStrip.TabIndex = 1;
             this.mainToolStrip.Text = "toolStrip1";
-            // 
-            // mainStatusStrip
-            // 
-            this.mainStatusStrip.Location = new System.Drawing.Point(0, 621);
-            this.mainStatusStrip.Name = "mainStatusStrip";
-            this.mainStatusStrip.Size = new System.Drawing.Size(1171, 22);
-            this.mainStatusStrip.TabIndex = 2;
-            this.mainStatusStrip.Text = "statusStrip1";
             // 
             // newToolStripButton
             // 
@@ -182,6 +178,14 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // mainStatusStrip
+            // 
+            this.mainStatusStrip.Location = new System.Drawing.Point(0, 621);
+            this.mainStatusStrip.Name = "mainStatusStrip";
+            this.mainStatusStrip.Size = new System.Drawing.Size(1171, 22);
+            this.mainStatusStrip.TabIndex = 2;
+            this.mainStatusStrip.Text = "statusStrip1";
+            // 
             // mainSplitContainer
             // 
             this.mainSplitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -192,6 +196,10 @@
             // mainSplitContainer.Panel1
             // 
             this.mainSplitContainer.Panel1.Controls.Add(this.sideBarSplitContainer);
+            // 
+            // mainSplitContainer.Panel2
+            // 
+            this.mainSplitContainer.Panel2.Controls.Add(this.drawingAreaSplitContainer);
             this.mainSplitContainer.Size = new System.Drawing.Size(1171, 572);
             this.mainSplitContainer.SplitterDistance = 389;
             this.mainSplitContainer.SplitterWidth = 5;
@@ -226,6 +234,18 @@
             this.sideBarToolStripContainer.TabIndex = 0;
             this.sideBarToolStripContainer.Text = "toolStripContainer1";
             // 
+            // drawingAreaSplitContainer
+            // 
+            this.drawingAreaSplitContainer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.drawingAreaSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drawingAreaSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.drawingAreaSplitContainer.Name = "drawingAreaSplitContainer";
+            this.drawingAreaSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.drawingAreaSplitContainer.Size = new System.Drawing.Size(775, 570);
+            this.drawingAreaSplitContainer.SplitterDistance = 312;
+            this.drawingAreaSplitContainer.SplitterWidth = 5;
+            this.drawingAreaSplitContainer.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,11 +258,13 @@
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "Main";
             this.Text = "MILTA";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.mainToolStrip.ResumeLayout(false);
             this.mainToolStrip.PerformLayout();
             this.mainSplitContainer.Panel1.ResumeLayout(false);
+            this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
             this.sideBarSplitContainer.Panel1.ResumeLayout(false);
@@ -250,6 +272,8 @@
             this.sideBarSplitContainer.ResumeLayout(false);
             this.sideBarToolStripContainer.ResumeLayout(false);
             this.sideBarToolStripContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drawingAreaSplitContainer)).EndInit();
+            this.drawingAreaSplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,6 +298,7 @@
         private System.Windows.Forms.SplitContainer mainSplitContainer;
         private System.Windows.Forms.SplitContainer sideBarSplitContainer;
         private System.Windows.Forms.ToolStripContainer sideBarToolStripContainer;
+        private System.Windows.Forms.SplitContainer drawingAreaSplitContainer;
     }
 }
 
