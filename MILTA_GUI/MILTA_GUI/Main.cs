@@ -16,21 +16,25 @@ namespace MILTA_GUI
     {
         miltaVTKControl miltaVTKControl;
         MiltaProject miltaProject;
+        TabularDisplayUserControl tabularDisplayControl;
         public Main()
         {
             miltaProject= new MiltaProject();
             InitializeComponent();
-            InitVTKControl();
+            InitCustomUserControls();
             mainTreeView.ImageList = mainIımageList;
         }
-        private void InitVTKControl()
+        private void InitCustomUserControls()
         {
             miltaVTKControl = new miltaVTKControl();
             miltaVTKControl.Dock = DockStyle.Fill;
+            tabularDisplayControl=new TabularDisplayUserControl();
+            tabularDisplayControl.Dock = DockStyle.Fill;
         }
         private void Main_Load(object sender, EventArgs e)
         {
             drawingAreaSplitContainer.Panel1.Controls.Add(miltaVTKControl);
+            drawingAreaSplitContainer.Panel2.Controls.Add(tabularDisplayControl);
             AddDummyProject();
 
         }
@@ -43,7 +47,7 @@ namespace MILTA_GUI
             shaft.OuterSections.Add(new OuterSection(30,30,30));
             shaft.OuterSections.Add(new OuterSection(30,20,30));
             shaft.OuterSections.Add(new OuterSection(20,20,30));
-
+            shaft.Loads.AddDummyForce();
 
             UpdateTreeView();
         }
@@ -63,6 +67,15 @@ namespace MILTA_GUI
                     outerSectionsNode.Nodes.Add(outerSectionNode);
                 }
                 shaftNode.Nodes.Add(outerSectionsNode);
+                //loads
+                CustomTreeNode loadsNode = new CustomTreeNode(shaft.Loads);
+                loadsNode.Text = "Loads";
+                foreach (var load in shaft.Loads)
+                {
+                    CustomTreeNode loadNode = new CustomTreeNode(load);
+                    loadsNode.Nodes.Add(loadNode);
+                }
+                shaftNode.Nodes.Add(loadsNode);
             }
 
             mainTreeView.Nodes.Add(projectNode);

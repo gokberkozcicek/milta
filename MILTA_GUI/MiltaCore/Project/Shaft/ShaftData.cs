@@ -24,10 +24,13 @@ namespace MiltaCore
         public SectionCollection OuterSections { get; set; }
         [Browsable(false)]
         public SectionCollection InnerSections { get; set; }
-      
+        [Browsable(false)]
+        public LoadCollection Loads { get; set; }
+
         public ShaftData() { 
             OuterSections=new SectionCollection();
             InnerSections = new SectionCollection();
+            Loads=new LoadCollection();
             StartPoint=new PointD(0,0,0);
         }
     }

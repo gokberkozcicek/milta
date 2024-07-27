@@ -277,6 +277,7 @@
             this.mainIımageList.Images.SetKeyName(3, "next.png");
             this.mainIımageList.Images.SetKeyName(4, "plus.png");
             this.mainIımageList.Images.SetKeyName(5, "cancel.png");
+            this.mainIımageList.Images.SetKeyName(6, "Load.ico");
             // 
             // propertyGrid1
             // 

@@ -18,6 +18,9 @@ namespace MiltaCore
         Shaft,
         ShaftCollection,
         Section,
-        SectionCollection
+        SectionCollection,
+        Force,
+        Moment,
+        LoadCollection
     }
 }

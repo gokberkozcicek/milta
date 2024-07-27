@@ -46,6 +46,10 @@
     <Compile Include="PointD.cs" />
     <Compile Include="PointDCollection.cs" />
     <Compile Include="Project\MiltaProject.cs" />
+    <Compile Include="Project\Shaft\Loads\ForceInput.cs" />
+    <Compile Include="Project\Shaft\Loads\LoadCollection.cs" />
+    <Compile Include="Project\Shaft\Loads\MiltaForceLoad.cs" />
+    <Compile Include="Project\Shaft\Loads\MiltaLoad.cs" />
     <Compile Include="Project\Shaft\Sections\CellCollection.cs" />
     <Compile Include="Project\Shaft\Sections\MiltaCell.cs" />
     <Compile Include="Project\Shaft\Sections\OuterSection.cs" />
