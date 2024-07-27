@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MILTA_GUI", "MILTA_GUI\MILTA_GUI.csproj", "{E0216375-01D5-46F5-A0D8-080A8F811BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiltaCore", "MiltaCore\MiltaCore.csproj", "{5B726796-B855-4916-A74F-5E0ABF2BC62F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0216375-01D5-46F5-A0D8-080A8F811BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0216375-01D5-46F5-A0D8-080A8F811BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0216375-01D5-46F5-A0D8-080A8F811BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0216375-01D5-46F5-A0D8-080A8F811BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B726796-B855-4916-A74F-5E0ABF2BC62F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B726796-B855-4916-A74F-5E0ABF2BC62F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B726796-B855-4916-A74F-5E0ABF2BC62F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B726796-B855-4916-A74F-5E0ABF2BC62F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {780D042F-2DE0-4EBB-8D93-555B0408087E}
+	EndGlobalSection
+EndGlobal
