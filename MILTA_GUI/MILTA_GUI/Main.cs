@@ -87,14 +87,24 @@ namespace MILTA_GUI
             CustomTreeNode selectedNode = e.Node as CustomTreeNode;
             if (selectedNode != null)
             {
-                if (selectedNode.IsPropertyGridObject)
+                ViewModel viewModel = null ;
+                switch (selectedNode.BaseObject.MiltaObjectType)
                 {
-                    propertyGrid1.SelectedObject = selectedNode.BaseObject;
+                    case MiltaObjectTypes.Force:
+                        viewModel = new ForceLoadViewModel();
+                        break;
+                    default:
+                        break;
                 }
-                else
+                if (viewModel!=null)
                 {
-                    propertyGrid1.SelectedObject=null;
+                    viewModel.BaseObject = selectedNode.BaseObject;
+                    viewModel.VTK = miltaVTKControl;
+                    viewModel.TreeView = mainTreeView;
+                    viewModel.PropertyGrid = propertyGrid1;
+                    viewModel.InitViewModel();
                 }
+                
             }
         }
 

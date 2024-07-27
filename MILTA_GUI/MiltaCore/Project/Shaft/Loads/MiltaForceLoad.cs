@@ -20,5 +20,13 @@ namespace MiltaCore
             Location = location;
             Inputs = new Dictionary<int, ForceInput>();
         }
+        public void AddDummyForceInput(int step=1)
+        {
+            if (!Inputs.ContainsKey(step))
+            {
+                ForceInput forceInput=new ForceInput(step,0,0,0);
+                forceInput.PropertyChanged += this.OnPropertyChanged;
+            }
+        }
     }
 }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtendedPropertyChangedEventArgs.cs" />
     <Compile Include="IMiltaComponent.cs" />
     <Compile Include="MiltaMath.cs" />
     <Compile Include="PointD.cs" />
