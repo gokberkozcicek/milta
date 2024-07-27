@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace MiltaCore
 {
     public class MiltaMath
     {
         public static double ToRadian(double angle)
         {
-            return angle * (Math.PI / 180);
+            return angle * (System.Math.PI / 180);
         }
         public static double ToDegree(double radian)
         {
-            return radian * (180/ Math.PI);
+            return radian * (180/ System.Math.PI);
         }
         public static bool FuzzyEqual(double a, double b, gxTolerances tolerance=gxTolerances.E4)
         {
-            return Math.Abs(a - b) < GetTolerance(tolerance);
+            return System.Math.Abs(a - b) < GetTolerance(tolerance);
         }
         public static bool IsZero(double a, gxTolerances tolerance = gxTolerances.E4)
         {

@@ -79,10 +79,11 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="miltaVTKControl.cs">
+    <Compile Include="Visualization\CustomActors\OuterContourActor.cs" />
+    <Compile Include="Visualization\miltaVTKControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="miltaVTKControl.Designer.cs">
+    <Compile Include="Visualization\miltaVTKControl.Designer.cs">
       <DependentUpon>miltaVTKControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -90,7 +91,7 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="miltaVTKControl.resx">
+    <EmbeddedResource Include="Visualization\miltaVTKControl.resx">
       <DependentUpon>miltaVTKControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -122,5 +123,6 @@
       <Name>MiltaCore</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

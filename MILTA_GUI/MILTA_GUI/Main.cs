@@ -1,4 +1,5 @@
 ﻿using MiltaCore;
+using MiltaCore.Sections;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +37,14 @@ namespace MILTA_GUI
         private void AddDummyProject()
         {
             ShaftData shaft=miltaProject.ShaftCollection.AddDummyShaft();
-            shaft.OuterSections.AddDummyOuterSection();
+
+            shaft.OuterSections.Add(new OuterSection(10,10,30));
+            shaft.OuterSections.Add(new OuterSection(10,30,30));
+            shaft.OuterSections.Add(new OuterSection(30,30,30));
+            shaft.OuterSections.Add(new OuterSection(30,20,30));
+            shaft.OuterSections.Add(new OuterSection(20,20,30));
+
+
             UpdateTreeView();
         }
         private void UpdateTreeView()
@@ -75,6 +83,12 @@ namespace MILTA_GUI
                     propertyGrid1.SelectedObject=null;
                 }
             }
+        }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            miltaVTKControl.Shaft = miltaProject.ShaftCollection.First();
+            miltaVTKControl.DrawGeometry();
         }
     }
 }

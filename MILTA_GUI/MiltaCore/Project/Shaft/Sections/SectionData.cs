@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiltaCore.Math;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace MiltaCore
         public PointD StartPoint { get; set; }
         [Browsable(false)]
         public virtual SectionTypes SectionType { get; set; }
+
+        public virtual List<MiltaCell> GetCells()
+        {
+            return null;
+        }
     }
     public enum SectionTypes
     {

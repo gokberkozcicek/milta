@@ -5,6 +5,13 @@ namespace MiltaCore
 {
     public class PointD
     {
+		private int _number=0;
+
+		public int Number
+		{
+			get { return _number; }
+			set { _number = value; }
+		}
 
 		private double _x;
 
@@ -52,26 +59,14 @@ namespace MiltaCore
 			this._y = y;
 			this._z = z;
 		}
-        public double DistanceTo(PointD other)
+        public void AppendMove(double x, double y, double z)
         {
-            return Math.Sqrt(Math.Pow(other.X - this.X, 2) +
-                             Math.Pow(other.Y - this.Y, 2) +
-                             Math.Pow(other.Z - this.Z, 2));
+            this._x += x;
+            this._y += y;
+            this._z += z;
         }
-        public double AngleToD(PointD other)
-        {
-            double dotProduct = _x * other.X + _y * other.Y + _z * other.Z;
-            double magnitudeA = Math.Sqrt(_x * _x + _y * _y + _z * _z);
-            double magnitudeB = Math.Sqrt(other.X * other.X + other.Y * other.Y + other.Z * other.Z);
-            double cosTheta = dotProduct / (magnitudeA * magnitudeB);
-            double angleRadians = Math.Acos(cosTheta);
-            double angleDegrees = angleRadians * (180 / Math.PI);
-            return angleDegrees;
-        }
-		public double AngleToR(PointD other)
-		{
-			return MiltaMath.ToRadian(AngleToD(other));
-		}
+
+  
 		public bool IsEqual(PointD other,gxTolerances tolerance=gxTolerances.E4)
 		{
 			bool xEqual=MiltaMath.FuzzyEqual(_x, other.X, tolerance);

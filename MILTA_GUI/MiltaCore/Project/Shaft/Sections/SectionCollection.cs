@@ -19,27 +19,39 @@ namespace MiltaCore.Sections
         }
         public OuterSection AddDummyOuterSection()
         {
-            OuterSection section = new OuterSection(30,20);
+            OuterSection section = new OuterSection(30,30,20);
             Add(section); return section;
         }
         private void SetPoints()
         {
             int i = 0;
-            double y = 0;
+            double x = 0;
             foreach (var section in this)
             {
                 if (i==0)
                 {
                     section.StartPoint = new PointD(0, 0, 0);
-                    y += section.length;
+                    x += section.length;
                 }
                 else
                 {
-                    section.StartPoint = new PointD(0, y, 0);
-                    y += section.length;
+                    section.StartPoint = new PointD(x, 0, 0);
+                    x += section.length;
                 }
                 i++;
             }
+        }
+        public CellCollection GetCells()
+        {
+            CellCollection cells = new CellCollection();
+            foreach (var section in this)
+            {
+                foreach (var cell in section.GetCells())
+                {
+                    cells.Add(cell);
+                }
+            }
+            return cells;
         }
     }
 }
