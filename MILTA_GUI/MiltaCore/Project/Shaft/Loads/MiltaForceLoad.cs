@@ -26,6 +26,7 @@ namespace MiltaCore
             {
                 ForceInput forceInput=new ForceInput(step,0,0,0);
                 forceInput.PropertyChanged += this.OnPropertyChanged;
+                Inputs.Add(step,forceInput);
             }
         }
     }

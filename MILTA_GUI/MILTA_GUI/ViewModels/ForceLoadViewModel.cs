@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 namespace MILTA_GUI
 {
     public class ForceLoadViewModel:ViewModel
@@ -15,10 +16,16 @@ namespace MILTA_GUI
 
         public override void InitViewModel()
         {
-            if (BaseObject == null)
+            if (BaseObject != null)
             {
                 ForceLoad=BaseObject as MiltaForceLoad;
+                ForceLoad.PropertyChanged += ForceLoad_PropertyChanged;
             }
+        }
+
+        private void ForceLoad_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            var ali = 1;
         }
     }
 }

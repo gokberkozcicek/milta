@@ -47,7 +47,8 @@ namespace MILTA_GUI
             shaft.OuterSections.Add(new OuterSection(30,30,30));
             shaft.OuterSections.Add(new OuterSection(30,20,30));
             shaft.OuterSections.Add(new OuterSection(20,20,30));
-            shaft.Loads.AddDummyForce();
+            var force=shaft.Loads.AddDummyForce();
+            force.AddDummyForceInput();
 
             UpdateTreeView();
         }
@@ -103,6 +104,8 @@ namespace MILTA_GUI
                     viewModel.TreeView = mainTreeView;
                     viewModel.PropertyGrid = propertyGrid1;
                     viewModel.InitViewModel();
+                    (miltaProject.ShaftCollection.First().Loads.First() as MiltaForceLoad).Inputs.First().Value.Fx = 100;
+                    var veli = 2;
                 }
                 
             }
