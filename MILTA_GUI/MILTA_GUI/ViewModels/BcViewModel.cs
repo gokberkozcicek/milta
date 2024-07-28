@@ -23,14 +23,8 @@ namespace MILTA_GUI.ViewModels
                 shaft = Bc.ParentObject.ParentObject as ShaftData;
                 Bc.PropertyChanged += ForceLoad_PropertyChanged;
                 PropertyGrid.SelectedObject = Bc;
-                CreateDataTable();
             }
         }
-        private void CreateDataTable()
-        {
-            
-        }
-
         private void ForceLoad_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             

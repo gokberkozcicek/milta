@@ -120,6 +120,9 @@ namespace MILTA_GUI
                     case MiltaObjectTypes.BC:
                         viewModel = new BcViewModel();
                         break;
+                    case MiltaObjectTypes.Section:
+                        viewModel = new SectionViewModel();
+                        break;
                     default:
                         break;
                 }

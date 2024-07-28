@@ -37,12 +37,12 @@ namespace MiltaCore.Sections
                 if (i==0)
                 {
                     section.StartPoint = new PointD(0, 0, 0);
-                    x += section.length;
+                    x += section.Length;
                 }
                 else
                 {
                     section.StartPoint = new PointD(x, 0, 0);
-                    x += section.length;
+                    x += section.Length;
                 }
                 i++;
             }
