@@ -32,6 +32,11 @@ namespace MILTA_GUI
                     break;
             }
         }
+        public void ClearChart()
+        {
+            BaseObject = null;
+            resultChart.ChartAreas.Clear();
+        }
         private void ForceLoadChart(IMiltaObject baseObject)
         {
             resultChart.ChartAreas.Clear();

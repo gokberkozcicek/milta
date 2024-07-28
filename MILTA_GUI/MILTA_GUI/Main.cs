@@ -95,16 +95,26 @@ namespace MILTA_GUI
             mainTreeView.Nodes.Add(projectNode);
             mainTreeView.ExpandAll();
         }
-
+        private void HideTabularDisplay()
+        {
+            tabularDisplayControl.ClearDisplay();
+            drawingAreaSplitContainer.Panel2Collapsed = true;
+        }
+        private void ShowTabularDisplay()
+        {
+            drawingAreaSplitContainer.Panel2Collapsed = false;
+        }
         private void mainTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             CustomTreeNode selectedNode = e.Node as CustomTreeNode;
             if (selectedNode != null)
             {
+                HideTabularDisplay();
                 ViewModel viewModel = null ;
                 switch (selectedNode.BaseObject.MiltaObjectType)
                 {
                     case MiltaObjectTypes.Force:
+                        ShowTabularDisplay();
                         viewModel = new ForceLoadViewModel();
                         break;
                     case MiltaObjectTypes.BC:

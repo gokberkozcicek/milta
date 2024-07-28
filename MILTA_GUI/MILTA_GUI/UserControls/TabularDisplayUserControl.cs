@@ -24,6 +24,13 @@ namespace MILTA_GUI
             Shaft = new ShaftData(null);
             SetDataGridSettings();
         }
+        public void ClearDisplay()
+        {
+            resultCustomChartUserControl.ClearChart();
+            resultDataGridView.Rows.Clear();
+            resultDataGridView.Columns.Clear();
+            resultDataGridView.DataSource = null;
+        }
         private void SetDataGridSettings()
         {
             resultDataGridView.AllowUserToAddRows = false; 
