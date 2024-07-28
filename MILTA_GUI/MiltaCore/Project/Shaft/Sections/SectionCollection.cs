@@ -8,18 +8,24 @@ namespace MiltaCore.Sections
 {
     public class SectionCollection : List<SectionData>, IMiltaObject
     {
+        public IMiltaObject ParentObject { get; set; }
         public string Id { get; set; }=Guid.NewGuid().ToString();
         public string Name { get; set; } = "Section Collection";
         public MiltaObjectTypes MiltaObjectType { get; set; } = MiltaObjectTypes.SectionCollection;
-
+        public SectionCollection(IMiltaObject parentObject)
+        {
+            ParentObject = parentObject;
+        }
         public new void Add(SectionData sectionData)
         {
+            sectionData.ParentObject = this;
             base.Add(sectionData);
             SetPoints();
         }
         public OuterSection AddDummyOuterSection()
         {
             OuterSection section = new OuterSection(30,30,20);
+            section.ParentObject = this;
             Add(section); return section;
         }
         private void SetPoints()

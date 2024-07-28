@@ -11,6 +11,7 @@ namespace MILTA_GUI
 {
     public class ForceLoadViewModel:ViewModel
     {
+        private ShaftData shaft;
         private MiltaForceLoad ForceLoad { get; set; }
 
 
@@ -19,13 +20,21 @@ namespace MILTA_GUI
             if (BaseObject != null)
             {
                 ForceLoad=BaseObject as MiltaForceLoad;
+                shaft=ForceLoad.ParentObject.ParentObject as ShaftData;
                 ForceLoad.PropertyChanged += ForceLoad_PropertyChanged;
+                CreateDataTable();
             }
+        }
+        private void CreateDataTable()
+        {
+            TabularDisplay.Shaft = shaft;
+            TabularDisplay.CreateLoadTable(ForceLoad);
+            PropertyGrid.SelectedObject = ForceLoad;
         }
 
         private void ForceLoad_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            var ali = 1;
+            TabularDisplay.UpdateChart(ForceLoad);
         }
     }
 }

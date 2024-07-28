@@ -11,6 +11,7 @@ namespace MiltaCore
         string Id { get; set; }
         string Name { get; set; }
         MiltaObjectTypes MiltaObjectType {  get; set; }
+        IMiltaObject ParentObject { get; set; }
     }
     public enum MiltaObjectTypes
     {

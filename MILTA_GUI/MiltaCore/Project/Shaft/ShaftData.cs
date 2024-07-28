@@ -27,11 +27,14 @@ namespace MiltaCore
         [Browsable(false)]
         public LoadCollection Loads { get; set; }
 
-        public ShaftData() { 
-            OuterSections=new SectionCollection();
-            InnerSections = new SectionCollection();
-            Loads=new LoadCollection();
+        public IMiltaObject ParentObject { get; set; }
+
+        public ShaftData(IMiltaObject parent) { 
+            OuterSections=new SectionCollection(this);
+            InnerSections = new SectionCollection(this);
+            Loads=new LoadCollection(this);
             StartPoint=new PointD(0,0,0);
+            ParentObject = parent;
         }
     }
 }

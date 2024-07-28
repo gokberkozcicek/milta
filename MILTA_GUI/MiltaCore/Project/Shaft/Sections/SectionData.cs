@@ -20,7 +20,7 @@ namespace MiltaCore
         public PointD StartPoint { get; set; }
         [Browsable(false)]
         public virtual SectionTypes SectionType { get; set; }
-
+        public IMiltaObject ParentObject { get; set; }
         public virtual List<MiltaCell> GetCells()
         {
             return null;

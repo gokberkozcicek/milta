@@ -17,9 +17,11 @@ namespace MiltaCore
         public virtual MiltaObjectTypes MiltaObjectType { get; set; }=MiltaObjectTypes.MiltaProject;
         [Browsable(false)]
         public ShaftCollection ShaftCollection;
-        public int AnalysisStepCount { get; set; } = 1;
-        public MiltaProject() { 
-        ShaftCollection = new ShaftCollection();
+        public int AnalysisStepCount { get; set; } = 5;
+        public IMiltaObject ParentObject { get; set; }
+        public MiltaProject() {
+            ShaftCollection = new ShaftCollection(this);
+            ParentObject = null;
         }
        
     }

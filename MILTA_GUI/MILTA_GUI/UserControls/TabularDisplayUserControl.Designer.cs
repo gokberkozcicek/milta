@@ -65,6 +65,7 @@
             this.resultDataGridView.Name = "resultDataGridView";
             this.resultDataGridView.Size = new System.Drawing.Size(438, 475);
             this.resultDataGridView.TabIndex = 0;
+            this.resultDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.resultDataGridView_CellValidating);
             // 
             // resultCustomChartUserControl
             // 

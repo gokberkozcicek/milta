@@ -15,6 +15,8 @@ namespace MiltaCore
         public double Location { get; set; } = 0;
         [Browsable(false)]
         public virtual MiltaObjectTypes MiltaObjectType { get; set; }
+        [Browsable(false)]
+        public IMiltaObject ParentObject { get; set; }
 
         [Browsable(false)]
         public event PropertyChangedEventHandler PropertyChanged;

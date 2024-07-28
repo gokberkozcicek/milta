@@ -103,9 +103,9 @@ namespace MILTA_GUI
                     viewModel.VTK = miltaVTKControl;
                     viewModel.TreeView = mainTreeView;
                     viewModel.PropertyGrid = propertyGrid1;
+                    viewModel.TabularDisplay = tabularDisplayControl;
                     viewModel.InitViewModel();
-                    (miltaProject.ShaftCollection.First().Loads.First() as MiltaForceLoad).Inputs.First().Value.Fx = 100;
-                    var veli = 2;
+                   
                 }
                 
             }

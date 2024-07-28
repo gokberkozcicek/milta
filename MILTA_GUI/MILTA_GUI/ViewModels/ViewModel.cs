@@ -11,6 +11,7 @@ namespace MILTA_GUI
     public abstract class ViewModel
     {
         public IMiltaObject BaseObject { get; set; }
+        public ShaftData ShaftData { get; set; }
         public miltaVTKControl VTK { get; set; }
         public TabularDisplayUserControl TabularDisplay { get; set; }
         public TreeView TreeView { get; set; }

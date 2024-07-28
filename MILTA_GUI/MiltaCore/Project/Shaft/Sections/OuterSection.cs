@@ -20,6 +20,7 @@ namespace MiltaCore.Sections
             D2 = d2;
             length= l;
             StartPoint=new PointD(0,0,0);
+            ParentObject = null;
         }
         public override List<MiltaCell> GetCells()
         {

@@ -12,22 +12,20 @@ namespace MiltaCore
         public override string Name { get; set; } = "Force";
         public override MiltaObjectTypes MiltaObjectType { get; set; } = MiltaObjectTypes.Force;
         [Browsable(false)]
-        public Dictionary<int,ForceInput> Inputs { get; set; }
+        public BindingList<ForceInput> Inputs { get; set; }
 
         public MiltaForceLoad() { }
         public MiltaForceLoad(double location,double fx, double fy, double fz)
         {
             Location = location;
-            Inputs = new Dictionary<int, ForceInput>();
+            Inputs = new BindingList<ForceInput>();
+            ParentObject = null;
         }
         public void AddDummyForceInput(int step=1)
         {
-            if (!Inputs.ContainsKey(step))
-            {
-                ForceInput forceInput=new ForceInput(step,0,0,0);
-                forceInput.PropertyChanged += this.OnPropertyChanged;
-                Inputs.Add(step,forceInput);
-            }
+            ForceInput forceInput = new ForceInput(step, 0, 0, 0);
+            forceInput.PropertyChanged += this.OnPropertyChanged;
+            Inputs.Add(forceInput);
         }
     }
 }
