@@ -18,21 +18,21 @@ namespace MiltaCore
         }
         private void Mesh()
         {
-            Shaft.MeshData.Nodes.Clear();
-            Shaft.MeshData.Elements.Clear();
+            Shaft.FEA.MeshData.Nodes.Clear();
+            Shaft.FEA.MeshData.Elements.Clear();
             double[] vertices = Linspace(0, Shaft.GetLength(), Shaft.NumberOfNodes);
             int i = 1;
             foreach (var vertex in vertices)
             {
                 FeNode node = new FeNode(i, vertex, 0, 0);
-                Shaft.MeshData.AddNode(node);
+                Shaft.FEA.MeshData.AddNode(node);
                 i++;
             }
             i = 1;
-            for (int j = 0; j < Shaft.MeshData.Nodes.Count - 1; j++)
+            for (int j = 0; j < Shaft.FEA.MeshData.Nodes.Count - 1; j++)
             {
                 Beam3EB beamElement = new Beam3EB(i, new int[] { j, j + 1 });
-                Shaft.MeshData.AddElement(beamElement);
+                Shaft.FEA.MeshData.AddElement(beamElement);
                 i++;
             }
         }

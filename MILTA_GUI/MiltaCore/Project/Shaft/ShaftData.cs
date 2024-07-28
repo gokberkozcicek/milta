@@ -43,8 +43,9 @@ namespace MiltaCore
                 Notify("NODECOUNT", oldValue, _numberOfNodes, Id);
             }
         }
+
         [Browsable(false)]
-        public MeshData MeshData { get; set; }
+        public FEA FEA { get; set; }
         [Browsable(false)]
         public bool IsMeshed { get; set; } = false;
         public ShaftData(IMiltaObject parent) { 
@@ -54,7 +55,7 @@ namespace MiltaCore
             Loads=new LoadCollection(this);
             StartPoint=new PointD(0,0,0);
             ParentObject = parent;
-            MeshData = new MeshData();
+            FEA = new FEA();
         }
         public void Mesh()
         {
@@ -80,6 +81,16 @@ namespace MiltaCore
                 length += section.Length;
             }
             return length;
+        }
+        public void Solve()
+        {
+            if (!IsMeshed)
+            {
+                Mesh();
+            }
+            //addloads
+            //addbc
+
         }
     }
 }
