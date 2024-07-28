@@ -1,4 +1,5 @@
-﻿using MiltaCore;
+﻿using MILTA_GUI.ViewModels;
+using MiltaCore;
 using MiltaCore.Sections;
 using System;
 using System.Collections.Generic;
@@ -105,6 +106,9 @@ namespace MILTA_GUI
                 {
                     case MiltaObjectTypes.Force:
                         viewModel = new ForceLoadViewModel();
+                        break;
+                    case MiltaObjectTypes.BC:
+                        viewModel = new BcViewModel();
                         break;
                     default:
                         break;

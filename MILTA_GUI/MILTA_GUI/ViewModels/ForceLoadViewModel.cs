@@ -22,6 +22,7 @@ namespace MILTA_GUI
                 ForceLoad=BaseObject as MiltaForceLoad;
                 shaft=ForceLoad.ParentObject.ParentObject as ShaftData;
                 ForceLoad.PropertyChanged += ForceLoad_PropertyChanged;
+                PropertyGrid.SelectedObject = ForceLoad;
                 CreateDataTable();
             }
         }
@@ -29,7 +30,7 @@ namespace MILTA_GUI
         {
             TabularDisplay.Shaft = shaft;
             TabularDisplay.CreateLoadTable(ForceLoad);
-            PropertyGrid.SelectedObject = ForceLoad;
+            
         }
 
         private void ForceLoad_PropertyChanged(object sender, PropertyChangedEventArgs e)

@@ -85,6 +85,7 @@
     <Compile Include="UserControls\TabularDisplayUserControl.Designer.cs">
       <DependentUpon>TabularDisplayUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BcViewModel.cs" />
     <Compile Include="ViewModels\CustomTreeNode.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
