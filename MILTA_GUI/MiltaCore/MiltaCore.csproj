@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NETFEA">
+      <HintPath>..\..\..\NETFEA\NETFEA\NETFEA\bin\Debug\NETFEA.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,6 +67,7 @@
     <Compile Include="Project\Shaft\ShaftData.cs" />
     <Compile Include="Project\IMiltaObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShaftMesher.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

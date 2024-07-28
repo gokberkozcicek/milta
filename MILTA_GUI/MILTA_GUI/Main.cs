@@ -48,6 +48,7 @@ namespace MILTA_GUI
             shaft.OuterSections.Add(new OuterSection(30,30,30));
             shaft.OuterSections.Add(new OuterSection(30,20,30));
             shaft.OuterSections.Add(new OuterSection(20,20,30));
+            shaft.Mesh();
             var force=shaft.Loads.AddDummyForce();
 
             var bc=shaft.Bcs.AddDummyBC();

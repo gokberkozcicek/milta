@@ -30,6 +30,8 @@ namespace MiltaCore
         }
         [Browsable(false)]
         public IMiltaObject ParentObject { get; set; }
+
+    
         public MiltaProject() {
             ShaftCollection = new ShaftCollection(this);
             ParentObject = null;

@@ -5,10 +5,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using NETFEA;
 namespace MiltaCore
 {
-    public class ShaftData : IMiltaObject, IMiltaComponent
+    public class ShaftData : IMiltaObject, IMiltaComponent,INotifyPropertyChanged
     {
         [Browsable(false)]
         public string Id { get; set; } = Guid.NewGuid().ToString();
@@ -31,6 +31,22 @@ namespace MiltaCore
         [Browsable(false)]
         public IMiltaObject ParentObject { get; set; }
 
+        private int _numberOfNodes = 1000;
+
+        public int NumberOfNodes
+        {
+            get { return _numberOfNodes; }
+            set
+            {
+                var oldValue = _numberOfNodes;
+                _numberOfNodes = value;
+                Notify("NODECOUNT", oldValue, _numberOfNodes, Id);
+            }
+        }
+        [Browsable(false)]
+        public MeshData MeshData { get; set; }
+        [Browsable(false)]
+        public bool IsMeshed { get; set; } = false;
         public ShaftData(IMiltaObject parent) { 
             OuterSections=new SectionCollection(this);
             InnerSections = new SectionCollection(this);
@@ -38,6 +54,32 @@ namespace MiltaCore
             Loads=new LoadCollection(this);
             StartPoint=new PointD(0,0,0);
             ParentObject = parent;
+            MeshData = new MeshData();
+        }
+        public void Mesh()
+        {
+            ShaftMesher mesher = new ShaftMesher(this);
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void Notify(string propertyName, object oldValue, object newValue, string Id)
+        {
+            OnPropertyChanged(this, new ExtendedPropertyChangedEventArgs(propertyName, oldValue, newValue, Id));
+
+        }
+        public virtual void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+                handler(sender, e);
+        }
+        public double GetLength()
+        {
+            double length = 0;
+            foreach (var section in this.OuterSections)
+            {
+                length += section.Length;
+            }
+            return length;
         }
     }
 }
