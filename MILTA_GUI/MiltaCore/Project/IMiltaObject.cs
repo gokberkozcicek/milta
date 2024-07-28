@@ -22,6 +22,8 @@ namespace MiltaCore
         SectionCollection,
         Force,
         Moment,
-        LoadCollection
+        LoadCollection,
+        BC,
+        BCCollection
     }
 }

@@ -34,6 +34,9 @@ namespace MILTA_GUI
                 case MiltaObjectTypes.LoadCollection:
                     IsPropertyGridObject = false;
                     break;
+                case MiltaObjectTypes.BCCollection:
+                    IsPropertyGridObject = false;
+                    break;
                 default:
                     break;
             }
@@ -57,6 +60,10 @@ namespace MILTA_GUI
                 case MiltaObjectTypes.LoadCollection:
                     ImageIndex = 6;
                     SelectedImageIndex = 6;
+                    break;
+                case MiltaObjectTypes.BCCollection:
+                    ImageIndex = 7;
+                    SelectedImageIndex = 7;
                     break;
                 default:
                     ImageIndex = 3;

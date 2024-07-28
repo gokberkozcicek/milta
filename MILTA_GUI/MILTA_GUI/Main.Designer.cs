@@ -47,10 +47,10 @@
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.sideBarSplitContainer = new System.Windows.Forms.SplitContainer();
             this.sideBarToolStripContainer = new System.Windows.Forms.ToolStripContainer();
-            this.drawingAreaSplitContainer = new System.Windows.Forms.SplitContainer();
             this.mainTreeView = new System.Windows.Forms.TreeView();
-            this.mainIımageList = new System.Windows.Forms.ImageList(this.components);
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.drawingAreaSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.mainIımageList = new System.Windows.Forms.ImageList(this.components);
             this.mainMenuStrip.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
@@ -246,6 +246,24 @@
             this.sideBarToolStripContainer.TabIndex = 0;
             this.sideBarToolStripContainer.Text = "toolStripContainer1";
             // 
+            // mainTreeView
+            // 
+            this.mainTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTreeView.Location = new System.Drawing.Point(0, 0);
+            this.mainTreeView.Name = "mainTreeView";
+            this.mainTreeView.Size = new System.Drawing.Size(387, 294);
+            this.mainTreeView.TabIndex = 0;
+            this.mainTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.mainTreeView_NodeMouseClick);
+            // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.propertyGrid1.Size = new System.Drawing.Size(387, 244);
+            this.propertyGrid1.TabIndex = 0;
+            // 
             // drawingAreaSplitContainer
             // 
             this.drawingAreaSplitContainer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -258,15 +276,6 @@
             this.drawingAreaSplitContainer.SplitterWidth = 5;
             this.drawingAreaSplitContainer.TabIndex = 0;
             // 
-            // mainTreeView
-            // 
-            this.mainTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainTreeView.Location = new System.Drawing.Point(0, 0);
-            this.mainTreeView.Name = "mainTreeView";
-            this.mainTreeView.Size = new System.Drawing.Size(387, 294);
-            this.mainTreeView.TabIndex = 0;
-            this.mainTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.mainTreeView_NodeMouseClick);
-            // 
             // mainIımageList
             // 
             this.mainIımageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("mainIımageList.ImageStream")));
@@ -278,15 +287,7 @@
             this.mainIımageList.Images.SetKeyName(4, "plus.png");
             this.mainIımageList.Images.SetKeyName(5, "cancel.png");
             this.mainIımageList.Images.SetKeyName(6, "Load.ico");
-            // 
-            // propertyGrid1
-            // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.propertyGrid1.Size = new System.Drawing.Size(387, 244);
-            this.propertyGrid1.TabIndex = 0;
+            this.mainIımageList.Images.SetKeyName(7, "Bc.ico");
             // 
             // Main
             // 

@@ -47,6 +47,8 @@
     <Compile Include="PointD.cs" />
     <Compile Include="PointDCollection.cs" />
     <Compile Include="Project\MiltaProject.cs" />
+    <Compile Include="Project\Shaft\BoundaryConditions\BcCollection.cs" />
+    <Compile Include="Project\Shaft\BoundaryConditions\BcData.cs" />
     <Compile Include="Project\Shaft\Loads\ForceInput.cs" />
     <Compile Include="Project\Shaft\Loads\LoadCollection.cs" />
     <Compile Include="Project\Shaft\Loads\MiltaForceLoad.cs" />

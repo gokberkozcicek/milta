@@ -48,6 +48,9 @@ namespace MILTA_GUI
             shaft.OuterSections.Add(new OuterSection(30,20,30));
             shaft.OuterSections.Add(new OuterSection(20,20,30));
             var force=shaft.Loads.AddDummyForce();
+
+            var bc=shaft.Bcs.AddDummyBC();
+
             force.AddDummyForceInput();
 
             UpdateTreeView();
@@ -77,6 +80,15 @@ namespace MILTA_GUI
                     loadsNode.Nodes.Add(loadNode);
                 }
                 shaftNode.Nodes.Add(loadsNode);
+                //bcs
+                CustomTreeNode bcsNode = new CustomTreeNode(shaft.Bcs);
+                bcsNode.Text = "Boundary Conditions";
+                foreach (var bc in shaft.Bcs)
+                {
+                    CustomTreeNode bcNode = new CustomTreeNode(bc);
+                    bcsNode.Nodes.Add(bcNode);
+                }
+                shaftNode.Nodes.Add(bcsNode);
             }
 
             mainTreeView.Nodes.Add(projectNode);

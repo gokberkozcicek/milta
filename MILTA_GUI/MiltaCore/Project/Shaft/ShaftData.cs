@@ -25,6 +25,8 @@ namespace MiltaCore
         [Browsable(false)]
         public SectionCollection InnerSections { get; set; }
         [Browsable(false)]
+        public BcCollection Bcs { get; set; }
+        [Browsable(false)]
         public LoadCollection Loads { get; set; }
 
         public IMiltaObject ParentObject { get; set; }
@@ -32,6 +34,7 @@ namespace MiltaCore
         public ShaftData(IMiltaObject parent) { 
             OuterSections=new SectionCollection(this);
             InnerSections = new SectionCollection(this);
+            Bcs = new BcCollection(this);
             Loads=new LoadCollection(this);
             StartPoint=new PointD(0,0,0);
             ParentObject = parent;
