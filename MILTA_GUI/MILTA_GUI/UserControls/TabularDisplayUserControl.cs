@@ -45,7 +45,7 @@ namespace MILTA_GUI
         public void CreateLoadTable(MiltaForceLoad forceLoad)
         {
             UpdateChart(forceLoad);
-            int stepNumber = (Shaft.ParentObject.ParentObject as MiltaProject).AnalysisStepCount;
+            int stepNumber = (Shaft.ParentObject.ParentObject as MiltaProject).StepCount;
             baseObject = forceLoad;
 
             if (forceLoad.Inputs.Count < stepNumber)

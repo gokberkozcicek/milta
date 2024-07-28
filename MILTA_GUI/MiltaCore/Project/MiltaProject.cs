@@ -17,12 +17,35 @@ namespace MiltaCore
         public virtual MiltaObjectTypes MiltaObjectType { get; set; }=MiltaObjectTypes.MiltaProject;
         [Browsable(false)]
         public ShaftCollection ShaftCollection;
-        public int AnalysisStepCount { get; set; } = 5;
+        private int _step =5;
+
+        public int StepCount
+        {
+            get { return _step; }
+            set {
+                var oldValue = _step;
+                _step = value;
+                Notify("STEPNUMBER", oldValue, _step, Id);
+            }
+        }
+        [Browsable(false)]
         public IMiltaObject ParentObject { get; set; }
         public MiltaProject() {
             ShaftCollection = new ShaftCollection(this);
             ParentObject = null;
         }
-       
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void Notify(string propertyName, object oldValue, object newValue, string Id)
+        {
+            OnPropertyChanged(this, new ExtendedPropertyChangedEventArgs(propertyName, oldValue, newValue, Id));
+
+        }
+        public virtual void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+                handler(sender, e);
+        }
+
     }
 }

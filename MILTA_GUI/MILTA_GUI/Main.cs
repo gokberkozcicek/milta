@@ -118,6 +118,9 @@ namespace MILTA_GUI
                         ShowTabularDisplay();
                         viewModel = new ForceLoadViewModel();
                         break;
+                    case MiltaObjectTypes.MiltaProject:
+                        viewModel = new MiltaProjectViewModel();
+                        break;
                     case MiltaObjectTypes.BC:
                         viewModel = new BcViewModel();
                         break;
