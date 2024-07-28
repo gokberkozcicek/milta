@@ -28,7 +28,7 @@ namespace MiltaCore
         public BcCollection Bcs { get; set; }
         [Browsable(false)]
         public LoadCollection Loads { get; set; }
-
+        [Browsable(false)]
         public IMiltaObject ParentObject { get; set; }
 
         public ShaftData(IMiltaObject parent) { 

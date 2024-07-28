@@ -95,6 +95,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ForceLoadViewModel.cs" />
+    <Compile Include="ViewModels\ShaftViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="Visualization\CustomActors\ActorCollection.cs" />
     <Compile Include="Visualization\CustomActors\CustomActor.cs" />

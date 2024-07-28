@@ -110,6 +110,7 @@ namespace MILTA_GUI
             if (selectedNode != null)
             {
                 HideTabularDisplay();
+                propertyGrid1.SelectedObject = null;
                 ViewModel viewModel = null ;
                 switch (selectedNode.BaseObject.MiltaObjectType)
                 {
@@ -122,6 +123,9 @@ namespace MILTA_GUI
                         break;
                     case MiltaObjectTypes.Section:
                         viewModel = new SectionViewModel();
+                        break;
+                    case MiltaObjectTypes.Shaft:
+                        viewModel = new ShaftViewModel();
                         break;
                     default:
                         break;
