@@ -28,6 +28,11 @@ namespace MiltaCore.Sections
             section.ParentObject = this;
             Add(section); return section;
         }
+        public void RemoveItem(SectionData sectionData)
+        {
+            this.RemoveAll(x=> x.Id == sectionData.Id);
+
+        }
         private void SetPoints()
         {
             int i = 0;

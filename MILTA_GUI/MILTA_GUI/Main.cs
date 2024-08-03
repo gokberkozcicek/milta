@@ -59,6 +59,7 @@ namespace MILTA_GUI
         }
         private void UpdateTreeView()
         {
+            mainTreeView.Nodes.Clear();
             CustomTreeNode projectNode=new CustomTreeNode(miltaProject);
             foreach (var shaft in miltaProject.ShaftCollection)
             {
@@ -108,6 +109,7 @@ namespace MILTA_GUI
         private void mainTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             CustomTreeNode selectedNode = e.Node as CustomTreeNode;
+            mainTreeView.ContextMenuStrip = null;
             if (selectedNode != null)
             {
                 HideTabularDisplay();
@@ -127,6 +129,10 @@ namespace MILTA_GUI
                         break;
                     case MiltaObjectTypes.Section:
                         viewModel = new SectionViewModel();
+                        break;
+                    case MiltaObjectTypes.SectionCollection:
+                        viewModel = new SectionCollectionViewModel();
+                        (viewModel as SectionCollectionViewModel).UpdateTreeView = UpdateTreeView;
                         break;
                     case MiltaObjectTypes.Shaft:
                         viewModel = new ShaftViewModel();
