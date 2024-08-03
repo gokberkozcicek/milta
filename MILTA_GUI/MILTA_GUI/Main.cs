@@ -134,6 +134,10 @@ namespace MILTA_GUI
                         viewModel = new SectionCollectionViewModel();
                         (viewModel as SectionCollectionViewModel).UpdateTreeView = UpdateTreeView;
                         break;
+                    case MiltaObjectTypes.LoadCollection:
+                        viewModel = new LoadCollectionViewModel();
+                        (viewModel as LoadCollectionViewModel).UpdateTreeView = UpdateTreeView;
+                        break;
                     case MiltaObjectTypes.Shaft:
                         viewModel = new ShaftViewModel();
                         break;
