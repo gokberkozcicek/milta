@@ -128,6 +128,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControls\TabularDisplayUserControl.resx">
       <DependentUpon>TabularDisplayUserControl.cs</DependentUpon>
@@ -152,6 +153,17 @@
       <Name>MiltaCore</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Isometric.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomToFit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mesh.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
