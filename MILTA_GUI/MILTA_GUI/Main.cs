@@ -108,6 +108,7 @@ namespace MILTA_GUI
         private void mainTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             CustomTreeNode selectedNode = e.Node as CustomTreeNode;
+            mainTreeView.ContextMenuStrip = null;
             if (selectedNode != null)
             {
                 HideTabularDisplay();
