@@ -45,9 +45,10 @@ namespace MiltaCore
         }
 
         [Browsable(false)]
-        public FEA FEA { get; set; }
+        public ShaftMesher Mesher { get; set; }
         [Browsable(false)]
         public bool IsMeshed { get; set; } = false;
+        public Dictionary<int, FEA> FEADictionary;
         public ShaftData(IMiltaObject parent) { 
             OuterSections=new SectionCollection(this);
             InnerSections = new SectionCollection(this);
@@ -55,7 +56,8 @@ namespace MiltaCore
             Loads=new LoadCollection(this);
             StartPoint=new PointD(0,0,0);
             ParentObject = parent;
-            FEA = new FEA();
+            Mesher= new ShaftMesher(this);
+            FEADictionary = new Dictionary<int, FEA>();
         }
         public void Mesh()
         {
@@ -84,13 +86,28 @@ namespace MiltaCore
         }
         public void Solve()
         {
-            if (!IsMeshed)
+            FEADictionary.Clear();
+            int stepCount = (ParentObject.ParentObject as MiltaProject).StepCount;
+            if(Mesher.MeshData.Nodes.Count == 0)
             {
                 Mesh();
             }
-            //addloads
-            //addbc
+            for (int i = 1; i <= stepCount; i++)
+            {
+                FEA analysis = new FEA();
+                ApplyLoads(analysis,i);
+                //applybcs
+                if (analysis.Solve())
+                {
+                    FEADictionary.Add(i, analysis);
+                }
+            }
+        }
+        private void ApplyLoads(FEA fea,int stepNumber)
+        {
 
         }
+
+
     }
 }

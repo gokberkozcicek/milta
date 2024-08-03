@@ -26,7 +26,7 @@ namespace MILTA_GUI
 
         private void Project_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            throw new NotImplementedException();
+           //
         }
 
     }

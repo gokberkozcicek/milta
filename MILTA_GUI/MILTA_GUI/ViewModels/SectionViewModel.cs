@@ -27,7 +27,6 @@ namespace MILTA_GUI
 
         private void Section_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            var ali = 1;
         }
     }
 }
