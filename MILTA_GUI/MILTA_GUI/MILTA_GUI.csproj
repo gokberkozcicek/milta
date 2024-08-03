@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="ViewModels\BcViewModel.cs" />
     <Compile Include="ViewModels\MiltaProjectViewModel.cs" />
+    <Compile Include="ViewModels\SectionCollectionViewModel.cs" />
     <Compile Include="ViewModels\SectionViewModel.cs" />
     <Compile Include="ViewModels\CustomTreeNode.cs" />
     <Compile Include="Main.cs">
