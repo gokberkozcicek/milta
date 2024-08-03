@@ -28,5 +28,10 @@ namespace MiltaCore
             Add(miltaForceLoad);
             return miltaForceLoad;
         }
+        public void RemoveItem(MiltaLoad item)
+        {
+            this.RemoveAll(x => x.Id == item.Id);
+
+        }
     }
 }

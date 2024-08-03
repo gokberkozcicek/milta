@@ -17,5 +17,6 @@ namespace MILTA_GUI
         public TreeView TreeView { get; set; }
         public PropertyGrid PropertyGrid { get; set; }
         public abstract void InitViewModel();
+
     }
 }

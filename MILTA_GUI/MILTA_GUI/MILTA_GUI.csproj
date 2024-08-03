@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="UserControls\vtkInteractorStyleControl.cs" />
     <Compile Include="ViewModels\BcViewModel.cs" />
+    <Compile Include="ViewModels\LoadCollectionViewModel.cs" />
     <Compile Include="ViewModels\MiltaProjectViewModel.cs" />
     <Compile Include="ViewModels\SectionCollectionViewModel.cs" />
     <Compile Include="ViewModels\SectionViewModel.cs" />
