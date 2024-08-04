@@ -163,5 +163,12 @@ namespace MILTA_GUI
             miltaVTKControl.Shaft = miltaProject.ShaftCollection.First();
             miltaVTKControl.DrawGeometry();
         }
+
+        private void materialLibraryToolStripButton_Click(object sender, EventArgs e)
+        {
+            MaterialLibraryWindow matWindow= new MaterialLibraryWindow();
+            matWindow.Materias = miltaProject.Materials;
+            matWindow.ShowDialog();
+        }
     }
 }

@@ -19,6 +19,8 @@ namespace MiltaCore
         public ShaftCollection ShaftCollection;
         private int _step =5;
 
+        public MaterialCollection Materials { get; set; }=new MaterialCollection();
+
         public int StepCount
         {
             get { return _step; }

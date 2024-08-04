@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MaterialLibraryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialLibraryWindow.Designer.cs">
+      <DependentUpon>MaterialLibraryWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CustomChartUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialLibraryWindow.resx">
+      <DependentUpon>MaterialLibraryWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomChartUserControl.resx">
       <DependentUpon>CustomChartUserControl.cs</DependentUpon>
@@ -165,6 +174,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Mesh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Export.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Import.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cotton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
