@@ -23,7 +23,7 @@ namespace MILTA_GUI
             if (BaseObject != null)
             {
                 _sectionCollection = BaseObject as SectionCollection;
-                shaft = _sectionCollection.ParentObject.ParentObject as ShaftData;
+                shaft = _sectionCollection.ParentObject as ShaftData;
                 PropertyGrid.SelectedObject = null;
 
                 //context menu
@@ -39,6 +39,8 @@ namespace MILTA_GUI
         {
             SectionData section=_sectionCollection.AddDummyOuterSection();
             UpdateTreeView?.Invoke();
+            shaft.SetPoints();
+            UpdateGeometry?.Invoke();
 
         }
 
