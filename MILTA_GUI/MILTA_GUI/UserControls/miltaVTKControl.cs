@@ -41,16 +41,15 @@ namespace MILTA_GUI
             _renderWindow = vtkRenderWindow.New();
             _renderWindow.SetParentId(this.Handle);
             _renderWindow.SetNumberOfLayers(3);
-
+            
             _renderWindow.AddRenderer(_baseRenderer);
             _renderWindow.AddRenderer(_overlayRenderer);
             _renderWindow.AddRenderer(_selectionRenderer);
 
-
             _renderWindowInteractor = vtkRenderWindowInteractor.New();
             _renderWindowInteractor.SetInteractorStyle(_style);
-
             _renderWindow.SetInteractor(_renderWindowInteractor);
+          
         }
 
         private void RenderWindowControl_Load(object sender, EventArgs e)
@@ -58,9 +57,9 @@ namespace MILTA_GUI
             
         }
         
-        public void DrawGeometry()
+        public void UpdateGeometry()
         {
-            RemoveAllViewProps();
+            ClearGeometry();
             renderWindowControl.RenderWindow.AddRenderer(_baseRenderer);
             OuterContourActor contourActor = new OuterContourActor();
             contourActor.ContourCells = Shaft.OuterSections.GetCells();
@@ -69,11 +68,16 @@ namespace MILTA_GUI
             _baseRenderer.AddActor(contourActor.GetActor());
             _baseRenderer.SetBackground(0.1, 0.2, 0.4);  
             _baseRenderer.Render();
+            _renderWindowInteractor.Render();
             
         }
-        private void RemoveAllViewProps()
+        private void ClearGeometry()
         {
-            _baseRenderer.RemoveAllViewProps();
+            foreach (var item in Actors)
+            {
+                _baseRenderer.RemoveActor(item.Actor);
+            }
+            Actors.Clear();
         }
         private void miltaVTKControl_Load(object sender, EventArgs e)
         {

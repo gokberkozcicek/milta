@@ -33,7 +33,7 @@ namespace MiltaCore.Sections
             this.RemoveAll(x=> x.Id == sectionData.Id);
 
         }
-        private void SetPoints()
+        internal void SetPoints()
         {
             int i = 0;
             double x = 0;

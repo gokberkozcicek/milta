@@ -37,6 +37,7 @@ namespace MILTA_GUI
             drawingAreaSplitContainer.Panel1.Controls.Add(miltaVTKControl);
             drawingAreaSplitContainer.Panel2.Controls.Add(tabularDisplayControl);
             AddDummyProject();
+            UpdateGeometry();
 
         }
         private void AddDummyProject()
@@ -131,12 +132,10 @@ namespace MILTA_GUI
                         viewModel = new SectionViewModel();
                         break;
                     case MiltaObjectTypes.SectionCollection:
-                        viewModel = new SectionCollectionViewModel();
-                        (viewModel as SectionCollectionViewModel).UpdateTreeView = UpdateTreeView;
+                        viewModel = new SectionCollectionViewModel();         
                         break;
                     case MiltaObjectTypes.LoadCollection:
                         viewModel = new LoadCollectionViewModel();
-                        (viewModel as LoadCollectionViewModel).UpdateTreeView = UpdateTreeView;
                         break;
                     case MiltaObjectTypes.Shaft:
                         viewModel = new ShaftViewModel();
@@ -151,6 +150,8 @@ namespace MILTA_GUI
                     viewModel.TreeView = mainTreeView;
                     viewModel.PropertyGrid = propertyGrid1;
                     viewModel.TabularDisplay = tabularDisplayControl;
+                    viewModel.UpdateGeometry = UpdateGeometry;
+                    viewModel.UpdateTreeView = UpdateTreeView;
                     viewModel.InitViewModel();
                    
                 }
@@ -160,10 +161,13 @@ namespace MILTA_GUI
 
         private void helpToolStripButton_Click(object sender, EventArgs e)
         {
-            miltaVTKControl.Shaft = miltaProject.ShaftCollection.First();
-            miltaVTKControl.DrawGeometry();
+            
         }
-
+        private void UpdateGeometry()
+        {
+            miltaVTKControl.Shaft = miltaProject.ShaftCollection.First();
+            miltaVTKControl.UpdateGeometry();
+        }
         private void materialLibraryToolStripButton_Click(object sender, EventArgs e)
         {
             MaterialLibraryWindow matWindow= new MaterialLibraryWindow();

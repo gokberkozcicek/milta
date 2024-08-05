@@ -107,6 +107,11 @@ namespace MiltaCore
         {
 
         }
+        public void SetPoints()
+        {
+            OuterSections.SetPoints();
+            InnerSections.SetPoints();
+        }
 
 
     }

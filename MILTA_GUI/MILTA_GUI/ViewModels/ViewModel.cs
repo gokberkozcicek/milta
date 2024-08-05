@@ -16,6 +16,10 @@ namespace MILTA_GUI
         public TabularDisplayUserControl TabularDisplay { get; set; }
         public TreeView TreeView { get; set; }
         public PropertyGrid PropertyGrid { get; set; }
+        public delegate void UpdateTreeViewDelegate();
+        public UpdateTreeViewDelegate UpdateTreeView;
+        public delegate void UpdateGeometryDelegate();
+        public UpdateTreeViewDelegate UpdateGeometry;
         public abstract void InitViewModel();
 
     }

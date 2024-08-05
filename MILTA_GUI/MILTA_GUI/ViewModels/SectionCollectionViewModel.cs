@@ -17,8 +17,6 @@ namespace MILTA_GUI
         private ShaftData shaft;
         private SectionCollection _sectionCollection { get; set; }
         private ContextMenuStrip contextMenuStrip;
-        public delegate void UpdateTreeViewDelegate();
-        public UpdateTreeViewDelegate UpdateTreeView;
 
         public override void InitViewModel()
         {

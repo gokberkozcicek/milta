@@ -38,6 +38,8 @@ namespace MILTA_GUI
         {
             (_section.ParentObject as SectionCollection).RemoveItem(_section);
             TreeView.Nodes.Remove(TreeView.SelectedNode);
+            shaft.SetPoints();
+            UpdateGeometry?.Invoke();
             //update vtk
         }
 
